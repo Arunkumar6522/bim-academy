@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/static/css/main.923dfd3e.css",
+    "main.js": "/static/js/main.9897908e.js",
+    "static/media/stock.mp4": "/static/media/stock.52cca4f212d088269206.mp4",
+    "static/media/image 1.jpg": "/static/media/image 1.3464f238074251096765.jpg",
+    "static/media/sun-icon.svg": "/static/media/sun-icon.8b253686c39fbffd17f909a4988b30e0.svg",
+    "static/media/new logo.svg": "/static/media/new logo.9ba6cf79ece3aadfcdc61b98077c6beb.svg",
+    "static/media/plant-icon.svg": "/static/media/plant-icon.4ff21eeb5cb7160a085053620e195e70.svg",
+    "static/media/stars-icon.svg": "/static/media/stars-icon.7aedef0452311bf95bc120cb5d375d47.svg",
+    "static/media/free-shiping-icon.svg": "/static/media/free-shiping-icon.613156b44e46bef9d78642d3190611f6.svg",
+    "static/media/temperature-icon.svg": "/static/media/temperature-icon.269d1bd0e6c38038960f5485e7a7e349.svg",
+    "static/media/quick-payment-icon.svg": "/static/media/quick-payment-icon.61855b619a93598f94bdcfe3846b7f62.svg",
+    "static/media/water-icon.svg": "/static/media/water-icon.b435400ed14af12331e17351f383cf61.svg",
+    "static/media/support-icon.svg": "/static/media/support-icon.74552ad7f2dfa330069d29d3e5fba3ac.svg",
+    "index.html": "/index.html",
+    "main.923dfd3e.css.map": "/static/css/main.923dfd3e.css.map",
+    "main.9897908e.js.map": "/static/js/main.9897908e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.923dfd3e.css",
+    "static/js/main.9897908e.js"
+  ]
+}

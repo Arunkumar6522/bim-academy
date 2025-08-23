@@ -1,7 +1,9 @@
 // Configuration file for the application
 export const config = {
-  // Use single port proxy (no separate CORS server needed)
-  GOOGLE_SHEETS_API_URL: 'http://localhost:3000/api',
+  // API URL - automatically switches between development and production
+  GOOGLE_SHEETS_API_URL: process.env.NODE_ENV === 'production' 
+    ? 'https://script.google.com/macros/s/AKfycbyLx_QEyyMlPWnNMEBZzyYIjmAcCeURkJci7D8OoUDRvfUnjVhGTb0NsnjvvHycD56i_w/exec'
+    : 'http://localhost:3000/api',
   
   // Other configuration values can be added here
   COMPANY_NAME: 'BimBytes Academy',

@@ -1,7 +1,16 @@
 // Configuration file for the application
 export const config = {
-  // API URL - Direct Google Apps Script URL for production
-  GOOGLE_SHEETS_API_URL: 'https://script.google.com/macros/s/AKfycbyLx_QEyyMlPWnNMEBZzyYIjmAcCeURkJci7D8OoUDRvfUnjVhGTb0NsnjvvHycD56i_w/exec',
+  // API URL - Smart detection for both local and production
+  GOOGLE_SHEETS_API_URL: (() => {
+    // Check if we're running on localhost (development)
+    if (typeof window !== 'undefined' && 
+        (window.location.hostname === 'localhost' || 
+         window.location.hostname === '127.0.0.1')) {
+      return 'http://localhost:3000/api'; // Use local proxy
+    }
+    // Production (Netlify, GitHub Pages, etc.)
+    return 'https://script.google.com/macros/s/AKfycbyLx_QEyyMlPWnNMEBZzyYIjmAcCeURkJci7D8OoUDRvfUnjVhGTb0NsnjvvHycD56i_w/exec';
+  })(),
   
   // Other configuration values can be added here
   COMPANY_NAME: 'BimBytes Academy',

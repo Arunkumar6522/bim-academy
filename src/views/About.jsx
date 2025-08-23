@@ -7,13 +7,13 @@ const About = () => {
     <section className="section-padding bg-gradient-to-br from-light to-white min-h-screen">
       {/* Header */}
       <div className="section-inner text-center mb-16">
-        <FadeIn delay={0.2} direction="down" fullWidth>
+        <FadeIn delay={0.1} direction="down" fullWidth>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-textPrimary mb-6 leading-tight">
             About BimBytes Academy
           </h1>
         </FadeIn>
         
-        <FadeIn delay={0.4} direction="down" fullWidth>
+        <FadeIn delay={0.2} direction="down" fullWidth>
           <p className="text-lg sm:text-xl text-textSecondary max-w-4xl mx-auto leading-relaxed">
             A premier BIM training institute dedicated to transforming professionals into industry-ready 
             BIM experts through comprehensive training, live project experience, and career guidance.
@@ -22,30 +22,30 @@ const About = () => {
       </div>
 
       {/* Stats Section */}
-      <FadeIn delay={0.6} direction="up" fullWidth>
+      <FadeIn delay={0.2} direction="up" fullWidth>
         <div className="section-inner grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
-          <div className="text-center">
+          <div className="text-center bg-white p-4 rounded-xl shadow-md hover:shadow-lg transition-all duration-200 ease-out hover:-translate-y-1">
             <div className="text-3xl md:text-4xl font-bold text-primary mb-2">10+</div>
-            <div className="text-textSecondary">Years Experience</div>
+            <div className="text-textPrimary font-medium">Years Experience</div>
           </div>
-          <div className="text-center">
+          <div className="text-center bg-white p-4 rounded-xl shadow-md hover:shadow-lg transition-all duration-200 ease-out hover:-translate-y-1">
             <div className="text-3xl md:text-4xl font-bold text-primary mb-2">500+</div>
-            <div className="text-textSecondary">Students Trained</div>
+            <div className="text-textPrimary font-medium">Students Trained</div>
           </div>
-          <div className="text-center">
+          <div className="text-center bg-white p-4 rounded-xl shadow-md hover:shadow-lg transition-all duration-200 ease-out hover:-translate-y-1">
             <div className="text-3xl md:text-4xl font-bold text-primary mb-2">95%</div>
-            <div className="text-textSecondary">Placement Rate</div>
+            <div className="text-textPrimary font-medium">Placement Rate</div>
           </div>
-          <div className="text-center">
+          <div className="text-center bg-white p-4 rounded-xl shadow-md hover:shadow-lg transition-all duration-200 ease-out hover:-translate-y-1">
             <div className="text-3xl md:text-4xl font-bold text-primary mb-2">50+</div>
-            <div className="text-textSecondary">Live Projects</div>
+            <div className="text-textPrimary font-medium">Live Projects</div>
           </div>
         </div>
       </FadeIn>
 
       {/* Mission & Vision */}
       <div className="section-inner grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
-        <FadeIn delay={0.8} direction="left">
+        <FadeIn delay={0.3} direction="left">
           <div className="bg-white p-8 rounded-2xl shadow-lg">
             <h3 className="text-2xl font-bold text-textPrimary mb-4">Our Mission</h3>
             <p className="text-textSecondary leading-relaxed">
@@ -56,7 +56,7 @@ const About = () => {
           </div>
         </FadeIn>
 
-        <FadeIn delay={1.0} direction="right">
+        <FadeIn delay={0.4} direction="right">
           <div className="bg-white p-8 rounded-2xl shadow-lg">
             <h3 className="text-2xl font-bold text-textPrimary mb-4">Our Vision</h3>
             <p className="text-textSecondary leading-relaxed">
@@ -69,7 +69,7 @@ const About = () => {
       </div>
 
       {/* Core Values */}
-      <FadeIn delay={1.2} direction="up" fullWidth>
+      <FadeIn delay={0.4} direction="up" fullWidth>
         <div className="section-inner text-center mb-12">
           <h2 className="text-3xl font-bold text-textPrimary mb-8">Our Core Values</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -105,7 +105,7 @@ const About = () => {
       </FadeIn>
 
       {/* Why Choose Us Section */}
-      <FadeIn delay={1.4} direction="up" fullWidth>
+      <FadeIn delay={0.5} direction="up" fullWidth>
         <div className="section-inner text-center mb-12">
           <h2 className="text-3xl font-bold text-textPrimary mb-8">Why Choose BimBytes Academy?</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -168,7 +168,7 @@ const About = () => {
       </FadeIn>
 
       {/* Team Section */}
-      <FadeIn delay={1.6} direction="up" fullWidth>
+      <FadeIn delay={0.6} direction="up" fullWidth>
         <div className="section-inner text-center mb-12">
           <h2 className="text-3xl font-bold text-textPrimary mb-8">Our Expert Team</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -192,7 +192,7 @@ const About = () => {
       </FadeIn>
 
       {/* CTA Section */}
-      <FadeIn delay={1.8} direction="up" fullWidth>
+      <FadeIn delay={0.7} direction="up" fullWidth>
         <div className="section-inner text-center bg-gradient-to-r from-primary to-primary/80 text-white p-12 rounded-2xl">
           <h2 className="text-3xl font-bold mb-4">Ready to Start Your BIM Journey?</h2>
           <p className="text-lg mb-8 opacity-90">

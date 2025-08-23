@@ -36,33 +36,33 @@ const Hero = () => {
             </FadeIn>
 
             <FadeIn delay={0.4} direction="up" fullWidth>
-              <div className="mt-8 grid grid-cols-2 gap-3 sm:flex sm:flex-row sm:gap-4 sm:justify-center max-w-xl mx-auto">
-                <Link to="/courses" className="btn-primary px-6 py-3 text-base w-full text-center inline-flex items-center justify-center">
+              <div className="mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center max-w-xl mx-auto">
+                <Link to="/courses" className="btn-primary px-6 py-3 text-base w-full sm:w-auto text-center inline-flex items-center justify-center">
                   Explore Courses
                 </Link>
-                <button onClick={openLead} className="px-6 py-3 rounded-xl border border-border bg-white/80 backdrop-blur font-semibold text-textPrimary hover:bg-white transition-colors w-full text-center inline-flex items-center justify-center">
+                <button onClick={openLead} className="px-6 py-3 rounded-xl border border-border bg-white/80 backdrop-blur font-semibold text-textPrimary hover:bg-white transition-colors w-full sm:w-auto text-center inline-flex items-center justify-center">
                   Book Free Counselling
                 </button>
               </div>
             </FadeIn>
 
-            <FadeIn delay={0.5} direction="up" fullWidth>
+            <FadeIn delay={0.3} direction="up" fullWidth>
               <div className="mt-10 hidden lg:grid grid-cols-2 sm:grid-cols-4 gap-4">
-                <div className="rounded-2xl bg-white/80 backdrop-blur p-4 text-center ring-1 ring-black/5 shadow-sm">
-                  <div className="text-2xl font-bold text-textPrimary">10+</div>
-                  <div className="text-xs text-textSecondary">Years in Industry</div>
+                <div className="rounded-2xl bg-white shadow-lg p-4 text-center ring-1 ring-primary/20 hover:ring-primary/40 transition-all duration-200 ease-out hover:shadow-xl hover:-translate-y-1">
+                  <div className="text-3xl font-bold text-primary">10+</div>
+                  <div className="text-sm font-medium text-textPrimary">Years in Industry</div>
                 </div>
-                <div className="rounded-2xl bg-white/80 backdrop-blur p-4 text-center ring-1 ring-black/5 shadow-sm">
-                  <div className="text-2xl font-bold text-textPrimary">40–80</div>
-                  <div className="text-xs text-textSecondary">Hands‑on Hours / Course</div>
+                <div className="rounded-2xl bg-white shadow-lg p-4 text-center ring-1 ring-primary/20 hover:ring-primary/40 transition-all duration-200 ease-out hover:shadow-xl hover:-translate-y-1">
+                  <div className="text-3xl font-bold text-primary">40–80</div>
+                  <div className="text-sm font-medium text-textPrimary">Hands‑on Hours / Course</div>
                 </div>
-                <div className="rounded-2xl bg-white/80 backdrop-blur p-4 text-center ring-1 ring-black/5 shadow-sm">
-                  <div className="text-2xl font-bold text-textPrimary">100%</div>
-                  <div className="text-xs text-textSecondary">Placement Assistance</div>
+                <div className="rounded-2xl bg-white shadow-lg p-4 text-center ring-1 ring-primary/20 hover:ring-primary/40 transition-all duration-200 ease-out hover:shadow-xl hover:-translate-y-1">
+                  <div className="text-3xl font-bold text-primary">100%</div>
+                  <div className="text-sm font-medium text-textPrimary">Placement Assistance</div>
                 </div>
-                <div className="rounded-2xl bg-white/80 backdrop-blur p-4 text-center ring-1 ring-black/5 shadow-sm">
-                  <div className="text-2xl font-bold text-textPrimary">5+</div>
-                  <div className="text-xs text-textSecondary">Projects Portfolio</div>
+                <div className="rounded-2xl bg-white shadow-lg p-4 text-center ring-1 ring-primary/20 hover:ring-primary/40 transition-all duration-200 ease-out hover:shadow-xl hover:-translate-y-1">
+                  <div className="text-3xl font-bold text-primary">5+</div>
+                  <div className="text-sm font-medium text-textPrimary">Projects Portfolio</div>
                 </div>
               </div>
             </FadeIn>
@@ -90,9 +90,9 @@ const Hero = () => {
                 <div className="absolute inset-0 bg-gradient-to-tr from-black/40 via-black/10 to-transparent pointer-events-none" />
                 {/* Single info pill card (bottom-left) */}
                 <div className="absolute bottom-4 left-4">
-                  <div className="px-5 py-3 sm:py-4 rounded-[24px] bg-white shadow-xl ring-1 ring-black/5">
+                  <div className="px-5 py-3 sm:py-4 rounded-[24px] bg-white shadow-xl ring-1 ring-primary/20 hover:ring-primary/40 transition-all duration-200 ease-out hover:shadow-2xl">
                     <div className="text-sm sm:text-base font-semibold text-textPrimary">Upcoming Class</div>
-                    <div className="text-xs sm:text-sm text-textSecondary">Chennai & Online</div>
+                    <div className="text-xs sm:text-sm font-medium text-textPrimary">Chennai & Online</div>
                   </div>
                 </div>
               </div>
@@ -100,23 +100,23 @@ const Hero = () => {
           </FadeIn>
 
           {/* Mobile-only quick stats below video (all 4 in one row) */}
-          <FadeIn delay={0.35} direction="up" fullWidth>
+          <FadeIn delay={0.25} direction="up" fullWidth>
             <div className="mt-6 grid grid-cols-4 gap-2 lg:hidden">
-              <div className="rounded-xl bg-white/80 backdrop-blur p-2 text-center ring-1 ring-black/5 shadow-sm">
-                <div className="text-base font-bold text-textPrimary leading-none">10+</div>
-                <div className="text-[10px] text-textSecondary leading-tight">Years</div>
+              <div className="rounded-xl bg-white shadow-md p-2 text-center ring-1 ring-primary/20 hover:ring-primary/40 transition-all duration-200 ease-out hover:shadow-lg hover:-translate-y-1">
+                <div className="text-lg font-bold text-primary leading-none">10+</div>
+                <div className="text-[10px] font-medium text-textPrimary leading-tight">Years</div>
               </div>
-              <div className="rounded-xl bg-white/80 backdrop-blur p-2 text-center ring-1 ring-black/5 shadow-sm">
-                <div className="text-base font-bold text-textPrimary leading-none">40–80</div>
-                <div className="text-[10px] text-textSecondary leading-tight">Hours</div>
+              <div className="rounded-xl bg-white shadow-md p-2 text-center ring-1 ring-primary/20 hover:ring-primary/40 transition-all duration-200 ease-out hover:shadow-lg hover:-translate-y-1">
+                <div className="text-lg font-bold text-primary leading-none">40–80</div>
+                <div className="text-[10px] font-medium text-textPrimary leading-tight">Hours</div>
               </div>
-              <div className="rounded-xl bg-white/80 backdrop-blur p-2 text-center ring-1 ring-black/5 shadow-sm">
-                <div className="text-base font-bold text-textPrimary leading-none">100%</div>
-                <div className="text-[10px] text-textSecondary leading-tight">Placement</div>
+              <div className="rounded-xl bg-white shadow-md p-2 text-center ring-1 ring-primary/20 hover:ring-primary/40 transition-all duration-200 ease-out hover:shadow-lg hover:-translate-y-1">
+                <div className="text-lg font-bold text-primary leading-none">100%</div>
+                <div className="text-[10px] font-medium text-textPrimary leading-tight">Placement</div>
               </div>
-              <div className="rounded-xl bg-white/80 backdrop-blur p-2 text-center ring-1 ring-black/5 shadow-sm">
-                <div className="text-base font-bold text-textPrimary leading-none">5+</div>
-                <div className="text-[10px] text-textSecondary leading-tight">Projects</div>
+              <div className="rounded-xl bg-white shadow-md p-2 text-center ring-1 ring-primary/20 hover:ring-primary/40 transition-all duration-200 ease-out hover:shadow-lg hover:-translate-y-1">
+                <div className="text-lg font-bold text-primary leading-none">5+</div>
+                <div className="text-[10px] font-medium text-textPrimary leading-tight">Projects</div>
               </div>
             </div>
           </FadeIn>

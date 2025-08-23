@@ -15,7 +15,7 @@ const HomePopularCourses = () => {
               <div className="text-sm font-semibold text-textPrimary line-clamp-2">{c.title}</div>
               <div className="mt-2 flex items-center gap-2 text-xs">
                 <div className="px-2 py-0.5 rounded-full bg-primary/10 text-primary font-semibold">{(4.6 + (idx*0.1)).toFixed(1)}★</div>
-                <div className="text-textSecondary">{150 + idx * 37} reviews</div>
+                <div className="text-textPrimary font-medium">{150 + idx * 37} reviews</div>
               </div>
             </div>
           </div>

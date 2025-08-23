@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { config } from '../config';
 
 const LeadCaptureModal = ({ isOpen, onClose }) => {
   const [formData, setFormData] = useState({
@@ -17,14 +18,34 @@ const LeadCaptureModal = ({ isOpen, onClose }) => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate API call
-    setTimeout(() => {
-      console.log('Lead captured:', formData);
-      alert('Thank you for your interest! We will contact you within 24 hours.');
+    try {
+      // Send data to Google Sheets via Apps Script
+      const response = await fetch(config.GOOGLE_SHEETS_API_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...formData,
+          source: 'Lead Capture Modal'
+        })
+      });
+      
+      const result = await response.json();
+      
+      if (result.success) {
+        alert('Thank you for your interest! We will contact you within 24 hours.');
+        onClose();
+        setFormData({ name: '', email: '', phone: '', course: '', experience: '', message: '' });
+      } else {
+        alert('There was an error. Please try again.');
+      }
+    } catch (error) {
+      console.error('Submission error:', error);
+      alert('There was an error. Please try again.');
+    } finally {
       setIsSubmitting(false);
-      onClose();
-      setFormData({ name: '', email: '', phone: '', course: '', experience: '', message: '' });
-    }, 1000);
+    }
   };
 
   const handleChange = (e) => {

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { config } from '../config';
 
 const CourseEnquiryModal = ({ isOpen, onClose, selectedCourse }) => {
   const [formData, setFormData] = useState({
@@ -8,6 +9,8 @@ const CourseEnquiryModal = ({ isOpen, onClose, selectedCourse }) => {
     phone: '',
     course: ''
   });
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   // Auto-bind course when modal opens
   useEffect(() => {
@@ -19,12 +22,40 @@ const CourseEnquiryModal = ({ isOpen, onClose, selectedCourse }) => {
     }
   }, [selectedCourse]);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Enquiry submitted:', formData);
-    // Here you would typically send the data to your backend
-    alert('Thank you for your enquiry! We will contact you soon.');
-    onClose();
+    setIsSubmitting(true);
+    
+    try {
+      // Send data to Google Sheets via Apps Script
+      const response = await fetch(config.GOOGLE_SHEETS_API_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...formData,
+          experience: '', // Not applicable for course enquiry
+          message: '', // Not applicable for course enquiry
+          source: 'Course Enquiry Modal'
+        })
+      });
+      
+      const result = await response.json();
+      
+      if (result.success) {
+        alert('Thank you for your enquiry! We will contact you soon.');
+        onClose();
+        setFormData({ name: '', email: '', phone: '', course: '' });
+      } else {
+        alert('There was an error. Please try again.');
+      }
+    } catch (error) {
+      console.error('Submission error:', error);
+      alert('There was an error. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e) => {
@@ -129,9 +160,10 @@ const CourseEnquiryModal = ({ isOpen, onClose, selectedCourse }) => {
 
             <button
               type="submit"
-              className="w-full btn-primary py-3 text-lg"
+              disabled={isSubmitting}
+              className="w-full btn-primary py-3 text-lg disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              Submit Enquiry
+              {isSubmitting ? 'Submitting...' : 'Submit Enquiry'}
             </button>
           </form>
 

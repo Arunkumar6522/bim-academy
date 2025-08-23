@@ -36,6 +36,8 @@ module.exports = {
         'slide-right': 'slideRight 0.6s ease-out',
         'scale-in': 'scaleIn 0.4s ease-out',
         'bounce-gentle': 'bounceGentle 2s infinite',
+        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        'float': 'float 6s ease-in-out infinite',
       },
       keyframes: {
         fadeIn: {
@@ -66,9 +68,17 @@ module.exports = {
           '0%, 100%': { transform: 'translateY(0)' },
           '50%': { transform: 'translateY(-10px)' },
         },
+        float: {
+          '0%, 100%': { transform: 'translateY(0px)' },
+          '50%': { transform: 'translateY(-20px)' },
+        },
       },
       transitionDuration: {
+        '150': '150ms',
+        '200': '200ms',
+        '300': '300ms',
         '350': '350ms',
+        '400': '400ms',
         '500': '500ms',
         '700': '700ms',
         '1000': '1000ms',
@@ -76,8 +86,53 @@ module.exports = {
       transitionTimingFunction: {
         'smooth': 'cubic-bezier(0.4, 0, 0.2, 1)',
         'bounce': 'cubic-bezier(0.68, -0.55, 0.265, 1.55)',
+        'ease-out': 'cubic-bezier(0, 0, 0.2, 1)',
+        'ease-in': 'cubic-bezier(0.4, 0, 1, 1)',
+      },
+      // Performance optimizations
+      willChange: {
+        'auto': 'auto',
+        'scroll': 'scroll-position',
+        'contents': 'contents',
+        'transform': 'transform',
+      },
+      // Container queries support
+      container: {
+        center: true,
+        padding: {
+          DEFAULT: '1rem',
+          sm: '2rem',
+          lg: '4rem',
+          xl: '5rem',
+          '2xl': '6rem',
+        },
       },
     },
   },
-  plugins: [],
+  plugins: [
+    // Add container queries plugin for better responsive design
+    function({ addUtilities }) {
+      const newUtilities = {
+        '.container-query': {
+          'container-type': 'inline-size',
+        },
+        '.container-query-sm': {
+          'container-type': 'inline-size',
+          'container-name': 'small',
+        },
+        '.container-query-lg': {
+          'container-type': 'inline-size',
+          'container-name': 'large',
+        },
+      }
+      addUtilities(newUtilities)
+    }
+  ],
+  // Performance optimizations
+  future: {
+    hoverOnlyWhenSupported: true,
+  },
+  experimental: {
+    optimizeUniversalDefaults: true,
+  },
 };

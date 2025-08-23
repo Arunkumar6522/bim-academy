@@ -6,8 +6,12 @@
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
     "framer-motion": "^12.23.12",
+    "http-proxy-middleware": "^2.0.9",
     "lucide-react": "^0.539.0",
+    "node-fetch": "^3.3.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.10.1",
@@ -19,8 +23,17 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "build:analyze": "npm run build && npx serve -s build",
+    "build:prod": "GENERATE_SOURCEMAP=false react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "proxy": "node cors-proxy.js",
+    "dev": "concurrently \"npm run proxy\" \"npm start\"",
+    "setup": "npm install node-fetch && npm install --save-dev concurrently",
+    "start-all": "npm run setup && npm run dev",
+    "analyze": "npm run build && npx source-map-explorer 'build/static/js/*.js'",
+    "lighthouse": "npx lighthouse http://localhost:3000 --output=html --output-path=./lighthouse-report.html",
+    "performance": "npm run build:prod && npm run lighthouse"
   },
   "eslintConfig": {
     "extends": [

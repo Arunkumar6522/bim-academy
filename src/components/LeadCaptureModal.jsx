@@ -18,6 +18,10 @@ const LeadCaptureModal = ({ isOpen, onClose }) => {
     e.preventDefault();
     setIsSubmitting(true);
     
+    console.log('🚀 Form submission started');
+    console.log('📡 API URL:', config.GOOGLE_SHEETS_API_URL);
+    console.log('📝 Form data:', formData);
+    
     try {
       // Send data to Google Sheets via Apps Script
       const response = await fetch(config.GOOGLE_SHEETS_API_URL, {
@@ -31,7 +35,9 @@ const LeadCaptureModal = ({ isOpen, onClose }) => {
         })
       });
       
+      console.log('📨 Response received:', response);
       const result = await response.json();
+      console.log('📊 Response data:', result);
       
       if (result.success) {
         alert('Thank you for your interest! We will contact you within 24 hours.');

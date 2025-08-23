@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useCallback } from 'react';
 
 const HorizontalCarousel = ({
   children,
@@ -18,8 +18,8 @@ const HorizontalCarousel = ({
     el.scrollBy({ left: amount, behavior: 'smooth' });
   };
 
-  const next = () => scrollByAmount(itemWidthPx + gapPx);
-  const prev = () => scrollByAmount(-(itemWidthPx + gapPx));
+  const next = useCallback(() => scrollByAmount(itemWidthPx + gapPx), [itemWidthPx, gapPx]);
+  const prev = useCallback(() => scrollByAmount(-(itemWidthPx + gapPx)), [itemWidthPx, gapPx]);
 
   useEffect(() => {
     if (!autoPlay) return undefined;

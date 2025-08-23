@@ -29,7 +29,7 @@ const HorizontalCarousel = ({
     return () => {
       if (timerRef.current) clearInterval(timerRef.current);
     };
-  }, [autoPlay, intervalMs]);
+  }, [autoPlay, intervalMs, next]);
 
   return (
     <div className="relative">

@@ -67,16 +67,16 @@ const Footer = () => {
                   <ul className="space-y-3">
                     {item.links.map((link, i) => (
                       <li key={i}>
-                        <a 
-                          href="#" 
+                        <button 
+                          type="button"
                           className="text-gray-300 hover:text-primary transition-all duration-300 ease-smooth text-sm
-                                   relative group"
+                                   relative group text-left w-full"
                         >
                           <span className="relative">
                             {link}
                             <span className="absolute -bottom-0.5 left-0 w-0 h-0.5 bg-primary transition-all duration-300 ease-smooth group-hover:w-full"></span>
                           </span>
-                        </a>
+                        </button>
                       </li>
                     ))}
                   </ul>
@@ -96,16 +96,16 @@ const Footer = () => {
                     {item.links.map((link, i) => (
                       <li key={i}>
                         {index !== 1 ? (
-                          <a 
-                            href="#" 
+                          <button 
+                            type="button"
                             className="text-gray-300 hover:text-primary transition-all duration-300 ease-smooth text-sm
-                                     relative group"
+                                     relative group text-left w-full"
                           >
                             <span className="relative">
                               {link}
                               <span className="absolute -bottom-0.5 left-0 w-0 h-0.5 bg-primary transition-all duration-300 ease-smooth group-hover:w-full"></span>
                             </span>
-                          </a>
+                          </button>
                         ) : (
                           <span className="text-gray-300 text-sm">
                             {link}
@@ -142,22 +142,22 @@ const Footer = () => {
 
           {/* Social Links */}
           <div className="flex justify-center md:justify-end space-x-5">
-            <a href="#" aria-label="LinkedIn" className="group text-gray-400 hover:text-white transition">
+            <a href="https://linkedin.com" aria-label="LinkedIn" className="group text-gray-400 hover:text-white transition">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
                 <path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8h4V24h-4V8zm7.5 0h3.8v2.2h.1c.5-.9 1.7-2.2 3.6-2.2 3.8 0 4.5 2.5 4.5 5.8V24h-4v-7.1c0-1.7 0-3.8-2.3-3.8-2.3 0-2.7 1.8-2.7 3.6V24h-4V8z"/>
               </svg>
             </a>
-            <a href="#" aria-label="X/Twitter" className="group text-gray-400 hover:text-white transition">
+            <a href="https://twitter.com" aria-label="X/Twitter" className="group text-gray-400 hover:text-white transition">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
                 <path d="M17.5 3h3.3l-7.2 8.2L22 21h-6.4l-5-6.1-5.7 6.1H1.6l7.7-8.4L2 3h6.6l4.6 5.6L17.5 3z"/>
               </svg>
             </a>
-            <a href="#" aria-label="YouTube" className="group text-gray-400 hover:text-white transition">
+            <a href="https://youtube.com" aria-label="YouTube" className="group text-gray-400 hover:text-white transition">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
                 <path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.6 3.5 12 3.5 12 3.5s-7.6 0-9.4.6A3 3 0 00.5 6.2 31.2 31.2 0 000 12a31.2 31.2 0 00.5 5.8 3 3 0 002.1 2.1c1.8.6 9.4.6 9.4.6s7.6 0 9.4-.6a3 3 0 002.1-2.1A31.2 31.2 0 0024 12a31.2 31.2 0 00-.5-5.8zM9.8 15.5v-7l6.3 3.5-6.3 3.5z"/>
               </svg>
             </a>
-            <a href="#" aria-label="Instagram" className="group text-gray-400 hover:text-white transition">
+            <a href="https://instagram.com" aria-label="Instagram" className="group text-gray-400 hover:text-white transition">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
                 <path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm10 2c1.7 0 3 1.3 3 3v10c0 1.7-1.3 3-3 3H7c-1.7 0-3-1.3-3-3V7c0-1.7 1.3-3 3-3h10zm-5 3a5 5 0 100 10 5 5 0 000-10zm0 2.2a2.8 2.8 0 110 5.6 2.8 2.8 0 010-5.6zM17.8 6.2a1 1 0 100 2 1 1 0 000-2z"/>
               </svg>

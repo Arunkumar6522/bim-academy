@@ -23,129 +23,62 @@ const Courses = () => {
       id: 1,
       category: 'revit',
       title: "Revit MEP (Mechanical, Electrical & Plumbing)",
-      duration: "3-4 Months",
-      level: "Beginner to Advanced",
-      price: "₹45,000",
-      originalPrice: "₹60,000",
-      description: "Comprehensive training on MEP modeling covering HVAC, electrical, plumbing, and fire-fighting systems with real project scenarios.",
-      features: [
-        "HVAC system design & modeling",
-        "Electrical system planning",
-        "Plumbing & fire-fighting",
-        "Live project training",
-        "Industry certification",
-        "Placement assistance"
-      ],
-      software: ["Revit MEP", "AutoCAD", "Navisworks"],
-      projects: 3,
-      hours: 80
+      description: "Beginner to Advanced training on MEP modeling. Covers HVAC, electrical, plumbing, and fire-fighting systems. Includes project-based learning with real industry scenarios.",
+      careerPath: "MEP Modeler, BIM MEP Coordinator, BIM MEP Engineer"
     },
     {
       id: 2,
       category: 'revit',
       title: "Revit Architecture",
-      duration: "3-4 Months",
-      level: "Beginner to Advanced",
-      price: "₹40,000",
-      originalPrice: "₹55,000",
-      description: "Master architectural design and BIM workflows with advanced detailing, family creation, and rendering techniques.",
-      features: [
-        "Building design & modeling",
-        "Space planning & optimization",
-        "Family creation & customization",
-        "Advanced rendering",
-        "Construction documentation",
-        "Portfolio development"
-      ],
-      software: ["Revit Architecture", "AutoCAD", "3ds Max"],
-      projects: 4,
-      hours: 75
+      description: "Comprehensive training on architectural design and BIM workflows. Learn building design, space planning, family creation, and rendering. Advanced detailing and documentation for construction drawings.",
+      careerPath: "Architectural BIM Modeler, BIM Architect"
     },
     {
       id: 3,
       category: 'revit',
       title: "Revit Structural",
-      duration: "3-4 Months",
-      level: "Beginner to Advanced",
-      price: "₹42,000",
-      originalPrice: "₹58,000",
-      description: "Learn structural modeling, analysis integration, and clash detection for civil and structural engineering projects.",
-      features: [
-        "Structural element modeling",
-        "Foundation design",
-        "Rebar detailing",
-        "Analysis integration",
-        "Clash detection",
-        "Construction drawings"
-      ],
-      software: ["Revit Structure", "AutoCAD", "ETABS"],
-      projects: 3,
-      hours: 80
+      description: "Learn to model structural elements such as beams, columns, foundations, and rebar. Structural analysis integration and clash detection techniques. Focused training for civil and structural engineering workflows.",
+      careerPath: "Structural BIM Modeler, Structural Engineer (BIM)"
     },
     {
       id: 4,
       category: 'coordination',
       title: "Navisworks Manage",
-      duration: "2-3 Months",
-      level: "Intermediate to Advanced",
-      price: "₹35,000",
-      originalPrice: "₹45,000",
-      description: "Master clash detection, coordination, and 4D simulation for seamless project collaboration.",
-      features: [
-        "Clash detection & resolution",
-        "4D simulation & planning",
-        "Model coordination",
-        "Project review workflows",
-        "Reporting & documentation",
-        "Team collaboration"
-      ],
-      software: ["Navisworks Manage", "Revit", "AutoCAD"],
-      projects: 2,
-      hours: 60
+      description: "Training on clash detection, coordination, and 4D simulation. Learn to integrate models from multiple disciplines for seamless collaboration. Master project review, visualization, and BIM coordination workflows.",
+      careerPath: "BIM Coordinator, BIM Manager"
     },
     {
       id: 5,
-      category: 'bim',
-      title: "BIM Manager Course",
-      duration: "4-5 Months",
-      level: "Advanced",
-      price: "₹65,000",
-      originalPrice: "₹80,000",
-      description: "Complete BIM lifecycle management training covering coordination, team leadership, and project delivery standards.",
-      features: [
-        "BIM execution planning",
-        "Team management",
-        "Quality control",
-        "Standards development",
-        "Project delivery",
-        "BIM360 management"
-      ],
-      software: ["Revit", "Navisworks", "BIM360", "AutoCAD"],
-      projects: 5,
-      hours: 120
+      category: 'specialized',
+      title: "MEP Modeler Course",
+      description: "Combination of Revit MEP and basic Navisworks Manage. Hands-on training on mechanical, electrical, and plumbing modeling. Includes coordination fundamentals.",
+      careerPath: "MEP Modeler, BIM MEP Coordinator"
     },
     {
       id: 6,
       category: 'specialized',
-      title: "MEP BIM Coordinator",
-      duration: "4-5 Months",
-      level: "Intermediate to Advanced",
-      price: "₹55,000",
-      originalPrice: "₹70,000",
-      description: "Advanced MEP coordination with Navisworks, clash detection, and stakeholder communication skills.",
-      features: [
-        "Advanced MEP modeling",
-        "Coordination workflows",
-        "Clash management",
-        "Stakeholder communication",
-        "BIM execution plans",
-        "Quality assurance"
-      ],
-      software: ["Revit MEP", "Navisworks", "AutoCAD"],
-      projects: 4,
-      hours: 100
+      title: "MEP BIM Coordinator Course",
+      description: "Advanced MEP modeling with Navisworks coordination. Clash detection, model management, and communication with stakeholders. Practical exposure to BIM execution plans and standards.",
+      careerPath: "MEP BIM Coordinator, BIM MEP Manager"
+    },
+    {
+      id: 7,
+      category: 'bim',
+      title: "BIM Manager Course",
+      description: "Complete BIM lifecycle management training. Covers multi-discipline coordination, team leadership, and project delivery standards. Includes exposure to BIM360, documentation control, and QA/QC workflows.",
+      careerPath: "BIM Manager, BIM Director"
     }
   ];
+
+  // Load images from assets whose filenames start with "WhatsApp"
+  let whatsappImages = [];
+  try {
+    // CRA/webpack: require.context is available
+    const ctx = require.context('../assets', false, /^\.\/WhatsApp.*\.(png|jpe?g|webp|svg)$/i);
+    whatsappImages = ctx.keys().map(ctx);
+  } catch (err) {
+    whatsappImages = [];
+  }
 
   const filteredCourses = activeCategory === 'all' 
     ? courses 
@@ -196,79 +129,46 @@ const Courses = () => {
       {/* Courses Grid */}
       <section className="section-padding bg-gradient-to-br from-light to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredCourses.map((course, index) => (
               <FadeIn key={course.id} delay={0.1 + index * 0.05} direction="up">
-                <div className="card overflow-hidden hover:shadow-glow transition-all duration-500 ease-smooth group">
-                  <div className="p-8">
+                <div className="bg-white rounded-xl shadow-sm ring-1 ring-border hover:shadow-md transition-all duration-300 ease-smooth group overflow-hidden">
+                  {whatsappImages.length > 0 && (
+                                         <img
+                       src={whatsappImages[index % whatsappImages.length]}
+                       alt={course.title}
+                       className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105"
+                     />
+                  )}
+                  <div className="p-6">
                     {/* Course Header */}
-                    <div className="mb-6">
-                      <h3 className="text-2xl font-bold text-textPrimary mb-3 group-hover:text-primary transition-colors duration-300 ease-smooth">
+                    <div className="mb-4">
+                      <h3 className="text-lg font-bold text-textPrimary mb-3">
                         {course.title}
                       </h3>
-                      <p className="text-textSecondary leading-relaxed mb-4">
+                      <p className="text-textSecondary text-sm leading-relaxed mb-3">
                         {course.description}
                       </p>
-                    </div>
-
-                    {/* Course Details */}
-                    <div className="grid grid-cols-2 gap-4 mb-6">
-                      <div className="text-center p-3 bg-primary/5 rounded-xl">
-                        <div className="text-sm text-textSecondary mb-1">Duration</div>
-                        <div className="font-semibold text-textPrimary">{course.duration}</div>
-                      </div>
-                      <div className="text-center p-3 bg-secondary/5 rounded-xl">
-                        <div className="text-sm text-textSecondary mb-1">Level</div>
-                        <div className="font-semibold text-textPrimary">{course.level}</div>
-                      </div>
-                      <div className="text-center p-3 bg-accent/5 rounded-xl">
-                        <div className="text-sm text-textSecondary mb-1">Projects</div>
-                        <div className="font-semibold text-textPrimary">{course.projects}</div>
-                      </div>
-                      <div className="text-center p-3 bg-success/5 rounded-xl">
-                        <div className="text-sm text-textSecondary mb-1">Hours</div>
-                        <div className="font-semibold text-textPrimary">{course.hours}</div>
+                      <div className="bg-primary/5 p-3 rounded-lg">
+                        <span className="text-xs text-primary uppercase tracking-wide font-semibold">Career Path: </span>
+                        <span className="text-sm text-textPrimary">{course.careerPath}</span>
                       </div>
                     </div>
 
-                    {/* Software & Features */}
-                    <div className="mb-6">
-                      <div className="mb-3">
-                        <span className="text-sm font-semibold text-textPrimary">Software:</span>
-                        <div className="flex flex-wrap gap-2 mt-1">
-                          {course.software.map((software, softwareIndex) => (
-                            <span
-                              key={softwareIndex}
-                              className="px-2 py-1 bg-primary/10 text-primary text-xs rounded-full"
-                            >
-                              {software}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-                      
-                      <div>
-                        <span className="text-sm font-semibold text-textPrimary">Key Features:</span>
-                        <ul className="mt-2 space-y-1">
-                          {course.features.slice(0, 3).map((feature, featureIndex) => (
-                            <li key={featureIndex} className="flex items-center gap-2 text-sm text-textSecondary">
-                              <div className="w-1.5 h-1.5 bg-primary rounded-full"></div>
-                              {feature}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    </div>
-
-                    {/* Price & CTA */}
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-3">
-                        <span className="text-2xl font-bold text-primary">{course.price}</span>
-                        <span className="text-lg text-textSecondary line-through">{course.originalPrice}</span>
-                      </div>
+                    {/* CTA */}
+                    <div className="flex justify-between items-center">
+                      <button 
+                        onClick={() => {
+                          // Show course details - you can implement a modal or expand the card
+                          console.log('View details for:', course.title);
+                        }}
+                        className="px-4 py-2 border border-crimson text-crimson text-sm font-medium rounded-lg hover:bg-crimson hover:text-white transition-colors duration-200"
+                      >
+                        View Details
+                      </button>
                       <button 
                         onClick={openLeadModal}
-                        className="btn-primary px-6 py-3 group-hover:bg-secondary transition-colors duration-300 ease-smooth"
+                        className="px-4 py-2 bg-crimson text-white text-sm font-medium rounded-lg hover:bg-crimson/90 transition-colors duration-200"
                       >
                         Enroll Now
                       </button>
@@ -281,83 +181,21 @@ const Courses = () => {
         </div>
       </section>
 
-      {/* Why Choose Our Courses */}
-      <section className="section-padding bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeIn delay={0.2} direction="down" fullWidth>
-            <div className="text-center mb-16">
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-textPrimary mb-4">
-                Why Choose <span className="text-gradient">Our Courses</span>
-              </h2>
-              <p className="text-lg text-textSecondary max-w-3xl mx-auto">
-                Industry-focused training that gives you the edge in your BIM career
-              </p>
-            </div>
-          </FadeIn>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                icon: "🎯",
-                title: "Industry Aligned",
-                description: "Curriculum designed by industry experts to match current market requirements"
-              },
-              {
-                icon: "👥",
-                title: "Expert Instructors",
-                description: "Learn from certified professionals with 10+ years of industry experience"
-              },
-              {
-                icon: "📚",
-                title: "Project-Based Learning",
-                description: "Work on real client projects to build a strong portfolio"
-              },
-              {
-                icon: "💼",
-                title: "Placement Support",
-                description: "100% placement assistance with our network of 200+ companies"
-              },
-              {
-                icon: "🔄",
-                title: "Lifetime Access",
-                description: "Access to course materials and updates even after completion"
-              },
-              {
-                icon: "📱",
-                title: "Flexible Learning",
-                description: "Choose between online, offline, or hybrid learning modes"
-              }
-            ].map((feature, index) => (
-              <FadeIn key={index} delay={0.2 + index * 0.1} direction="up">
-                <div className="card p-8 text-center hover:shadow-glow transition-all duration-500 ease-smooth">
-                  <div className="mb-6">
-                    <div className="text-4xl mb-4">{feature.icon}</div>
-                    <h3 className="text-xl font-bold text-textPrimary mb-3">{feature.title}</h3>
-                    <p className="text-textSecondary">{feature.description}</p>
-                  </div>
-                </div>
-              </FadeIn>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* CTA Section */}
-      <section className="section-padding bg-gradient-to-br from-primary to-secondary">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="section-padding bg-crimson">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <FadeIn delay={0.2} direction="up" fullWidth>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4">
               Ready to Start Your BIM Journey?
             </h2>
-            <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto">
+            <p className="text-lg text-white/90 mb-6 max-w-2xl mx-auto">
               Choose the right course for your career goals and get started with expert-led training
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button onClick={openLeadModal} className="btn-secondary px-8 py-4 text-lg">
-                Book Free Counselling
-              </button>
-              <button className="btn-white px-8 py-4 text-lg">Download Brochure</button>
-            </div>
+            <button onClick={openLeadModal} className="btn-white px-6 py-3 text-base">
+              Book Free Counselling
+            </button>
           </FadeIn>
         </div>
       </section>

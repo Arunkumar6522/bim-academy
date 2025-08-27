@@ -24,6 +24,9 @@ export const config = {
   })(),
   GOOGLE_PLACE_ID: '',
   GOOGLE_PLACE_QUERY: 'BIM BYTES ACADEMY Chennai',
+
+  // Optional: animated tech background gif for Hero (public URL or /path in public)
+  TECH_GIF_URL: '',
   
   // Other configuration values can be added here
   COMPANY_NAME: 'BimBytes Academy',

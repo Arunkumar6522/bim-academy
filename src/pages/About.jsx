@@ -3,36 +3,6 @@ import Footer from "../views/Footer";
 import FadeIn from "../components/FadeIn";
 
 const About = () => {
-  const teamMembers = [
-    {
-      name: "Rajesh Kumar",
-      role: "Founder & CEO",
-      experience: "15+ Years",
-      expertise: "BIM Strategy & Implementation",
-      image: "/api/placeholder/300/300"
-    },
-    {
-      name: "Priya Sharma",
-      role: "Head of Training",
-      experience: "12+ Years",
-      expertise: "Revit & BIM Training",
-      image: "/api/placeholder/300/300"
-    },
-    {
-      name: "Arun Patel",
-      role: "Technical Director",
-      experience: "18+ Years",
-      expertise: "MEP & Structural Design",
-      image: "/api/placeholder/300/300"
-    },
-    {
-      name: "Meera Iyer",
-      role: "Placement Head",
-      experience: "10+ Years",
-      expertise: "Career Development",
-      image: "/api/placeholder/300/300"
-    }
-  ];
 
   const milestones = [
     { year: "2010", title: "Founded", description: "Started as a small training center in Chennai" },
@@ -76,94 +46,151 @@ const About = () => {
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-textPrimary mb-6">
                 <span className="text-gradient">About Us</span>
               </h1>
-              <p className="text-xl text-textSecondary max-w-3xl mx-auto">
-                BimBytes Academy is India's premier BIM training institute, dedicated to transforming 
-                careers in the Architecture, Engineering, and Construction industry through expert-led training.
-              </p>
+              <blockquote className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-textPrimary mb-6 italic">
+                "The value of knowledge is realized only when it transform into action and innovation"
+              </blockquote>
+              <p className="text-lg text-textSecondary mb-8">- Y. Mohanakrishnan</p>
             </div>
           </FadeIn>
         </div>
       </section>
 
-      {/* Mission & Vision */}
+      {/* Description & Team Photo Section */}
       <section className="section-padding bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <FadeIn delay={0.2} direction="left">
               <div>
-                <h2 className="text-3xl font-bold text-textPrimary mb-6">Our Mission</h2>
-                <p className="text-lg text-textSecondary mb-6 leading-relaxed">
-                  To bridge the gap between academic knowledge and industry requirements by providing 
-                  hands-on, project-based BIM training that prepares students for successful careers 
-                  in the AEC industry.
+                <p className="text-lg text-textSecondary leading-relaxed">
+                  BIM Bytes Academy helps engineers enhance their skills and transform into industry-ready professionals. We focus on practical learning and real-world applications, guiding engineers to grow with confidence and reach their career goals. We are dedicated to building engineers who are ready to excel in every challenge.
                 </p>
-                <ul className="space-y-3">
-                  <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-primary rounded-full mt-2"></div>
-                    <span className="text-textSecondary">Industry-aligned curriculum</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-primary rounded-full mt-2"></div>
-                    <span className="text-textSecondary">Expert-led training programs</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-primary rounded-full mt-2"></div>
-                    <span className="text-textSecondary">100% placement assistance</span>
-                  </li>
-                </ul>
               </div>
             </FadeIn>
-
+            
             <FadeIn delay={0.2} direction="right">
-              <div>
-                <h2 className="text-3xl font-bold text-textPrimary mb-6">Our Vision</h2>
-                <p className="text-lg text-textSecondary mb-6 leading-relaxed">
-                  To become the most trusted and preferred BIM training institute in India, 
-                  recognized for producing industry-ready professionals who drive innovation 
-                  and excellence in the construction sector.
-                </p>
-                <ul className="space-y-3">
-                  <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-primary rounded-full mt-2"></div>
-                    <span className="text-textSecondary">National recognition</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-primary rounded-full mt-2"></div>
-                    <span className="text-textSecondary">Industry partnerships</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-primary rounded-full mt-2"></div>
-                    <span className="text-textSecondary">Innovation leadership</span>
-                  </li>
-                </ul>
+              <div className="flex justify-center">
+                <div className="w-80 h-80 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-2xl border-2 border-dashed border-primary/30 flex items-center justify-center">
+                  <div className="text-center">
+                    <div className="text-6xl mb-4">👥</div>
+                    <p className="text-textSecondary font-medium">Team Photo</p>
+                    <p className="text-sm text-textSecondary">Placeholder</p>
+                  </div>
+                </div>
               </div>
             </FadeIn>
           </div>
         </div>
       </section>
 
-      {/* Company Values */}
+      {/* Mission & Vision */}
+      <section className="section-padding bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <FadeIn delay={0.2} direction="down" fullWidth>
+            <div className="text-center mb-16">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-textPrimary mb-4">
+                Our <span className="text-gradient">Mission & Vision</span>
+              </h2>
+              <p className="text-lg text-textSecondary max-w-3xl mx-auto">
+                Driving innovation and excellence in BIM education
+              </p>
+            </div>
+          </FadeIn>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <FadeIn delay={0.3} direction="left">
+              <div className="relative">
+                <div className="absolute inset-0 bg-gradient-to-br from-crimson/10 to-black/20 rounded-3xl"></div>
+                <div className="relative bg-white rounded-3xl p-8 shadow-lg ring-1 ring-crimson/20">
+                  <div className="text-center mb-6">
+                    <div className="inline-flex items-center justify-center w-16 h-16 bg-crimson rounded-2xl mb-4">
+                      <span className="text-2xl text-white">🎯</span>
+                    </div>
+                    <h3 className="text-2xl font-bold text-textPrimary mb-3">Our Mission</h3>
+                  </div>
+                  <p className="text-lg text-textSecondary leading-relaxed text-center">
+                    To bridge the gap between academic knowledge and industry requirements by providing 
+                    hands-on, project-based BIM training that prepares students for successful careers 
+                    in the AEC industry.
+                  </p>
+                </div>
+              </div>
+            </FadeIn>
+
+            <FadeIn delay={0.4} direction="right">
+              <div className="relative">
+                <div className="absolute inset-0 bg-gradient-to-br from-black/10 to-crimson/20 rounded-3xl"></div>
+                <div className="relative bg-white rounded-3xl p-8 shadow-lg ring-1 ring-black/20">
+                  <div className="text-center mb-6">
+                    <div className="inline-flex items-center justify-center w-16 h-16 bg-crimson rounded-2xl mb-4">
+                      <span className="text-2xl text-white">🚀</span>
+                    </div>
+                    <h3 className="text-2xl font-bold text-textPrimary mb-3">Our Vision</h3>
+                  </div>
+                  <p className="text-lg text-textSecondary leading-relaxed text-center">
+                    To become the most trusted and preferred BIM training institute in India, 
+                    recognized for producing industry-ready professionals who drive innovation 
+                    and excellence in the construction sector.
+                  </p>
+                </div>
+              </div>
+            </FadeIn>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Responsibilities */}
       <section className="section-padding bg-gradient-to-br from-light to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn delay={0.2} direction="down" fullWidth>
             <div className="text-center mb-16">
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-textPrimary mb-4">
-                Our <span className="text-gradient">Core Values</span>
+                Our <span className="text-gradient">Responsibilities</span>
               </h2>
               <p className="text-lg text-textSecondary max-w-3xl mx-auto">
-                The principles that guide everything we do at BimBytes Academy
+                We take our commitment to student success seriously
               </p>
             </div>
           </FadeIn>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {values.map((value, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                title: "Quality Education",
+                description: "Delivering industry-standard BIM training with practical, hands-on experience",
+                icon: "🎓"
+              },
+              {
+                title: "Career Development",
+                description: "Providing placement assistance and career guidance to all students",
+                icon: "💼"
+              },
+              {
+                title: "Industry Connection",
+                description: "Building strong partnerships with companies for internship and job opportunities",
+                icon: "🤝"
+              },
+              {
+                title: "Continuous Support",
+                description: "Offering ongoing mentorship and technical support even after course completion",
+                icon: "🔄"
+              },
+              {
+                title: "Skill Enhancement",
+                description: "Regular curriculum updates to match evolving industry requirements",
+                icon: "📈"
+              },
+              {
+                title: "Student Success",
+                description: "Ensuring every student achieves their career goals and professional growth",
+                icon: "🎯"
+              }
+            ].map((responsibility, index) => (
               <FadeIn key={index} delay={0.2 + index * 0.1} direction="up">
-                <div className="card p-8 text-center hover:shadow-glow transition-all duration-500 ease-smooth">
-                  <div className="mb-6">
-                    <div className="text-4xl mb-4">{value.icon}</div>
-                    <h3 className="text-xl font-bold text-textPrimary mb-3">{value.title}</h3>
-                    <p className="text-textSecondary">{value.description}</p>
+                <div className="card p-6 text-center hover:shadow-glow transition-all duration-500 ease-smooth">
+                  <div className="mb-4">
+                    <div className="text-4xl mb-3">{responsibility.icon}</div>
+                    <h3 className="text-lg font-bold text-textPrimary mb-2">{responsibility.title}</h3>
+                    <p className="text-textSecondary text-sm">{responsibility.description}</p>
                   </div>
                 </div>
               </FadeIn>
@@ -171,6 +198,8 @@ const About = () => {
           </div>
         </div>
       </section>
+
+
 
       {/* Company Journey */}
       <section className="section-padding bg-white">
@@ -212,80 +241,19 @@ const About = () => {
         </div>
       </section>
 
-      {/* Team Section */}
-      <section className="section-padding bg-gradient-to-br from-light to-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeIn delay={0.2} direction="down" fullWidth>
-            <div className="text-center mb-16">
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-textPrimary mb-4">
-                Meet Our <span className="text-gradient">Expert Team</span>
-              </h2>
-              <p className="text-lg text-textSecondary max-w-3xl mx-auto">
-                Industry professionals with decades of experience in BIM and construction
-              </p>
-            </div>
-          </FadeIn>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {teamMembers.map((member, index) => (
-              <FadeIn key={index} delay={0.2 + index * 0.1} direction="up">
-                <div className="card p-6 text-center hover:shadow-glow transition-all duration-500 ease-smooth">
-                  <div className="mb-6">
-                    <div className="w-24 h-24 bg-gradient-to-br from-gray-200 to-gray-300 rounded-full mx-auto mb-4 flex items-center justify-center">
-                      <span className="text-textSecondary text-lg">Photo</span>
-                    </div>
-                    <h3 className="text-xl font-bold text-textPrimary mb-1">{member.name}</h3>
-                    <p className="text-primary font-semibold mb-2">{member.role}</p>
-                    <p className="text-success font-bold text-sm mb-2">{member.experience}</p>
-                    <p className="text-textSecondary text-sm">{member.expertise}</p>
-                  </div>
-                </div>
-              </FadeIn>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Statistics */}
-      <section className="section-padding bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeIn delay={0.2} direction="up" fullWidth>
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
-              <div className="p-6 rounded-2xl bg-gradient-to-br from-primary/10 to-secondary/10">
-                <div className="text-4xl font-bold text-primary mb-2">14+</div>
-                <div className="text-textPrimary font-semibold">Years Experience</div>
-              </div>
-              <div className="p-6 rounded-2xl bg-gradient-to-br from-secondary/10 to-accent/10">
-                <div className="text-4xl font-bold text-secondary mb-2">5000+</div>
-                <div className="text-textPrimary font-semibold">Students Trained</div>
-              </div>
-              <div className="p-6 rounded-2xl bg-gradient-to-br from-accent/10 to-primary/10">
-                <div className="text-4xl font-bold text-accent mb-2">200+</div>
-                <div className="text-textPrimary font-semibold">Companies Partnered</div>
-              </div>
-              <div className="p-6 rounded-2xl bg-gradient-to-br from-success/10 to-primary/10">
-                <div className="text-4xl font-bold text-success mb-2">95%</div>
-                <div className="text-textPrimary font-semibold">Placement Rate</div>
-              </div>
-            </div>
-          </FadeIn>
-        </div>
-      </section>
 
       {/* CTA Section */}
-      <section className="section-padding bg-gradient-to-br from-primary to-secondary">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="section-padding bg-crimson">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <FadeIn delay={0.2} direction="up" fullWidth>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4">
               Join the BimBytes Family
             </h2>
-            <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto">
+            <p className="text-lg text-white/90 mb-6 max-w-2xl mx-auto">
               Be part of our success story and start your journey towards a rewarding BIM career
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="btn-secondary px-8 py-4 text-lg">Explore Courses</button>
-              <button className="btn-white px-8 py-4 text-lg">Contact Us</button>
-            </div>
+            <button className="btn-white px-6 py-3 text-base">Explore Courses</button>
           </FadeIn>
         </div>
       </section>

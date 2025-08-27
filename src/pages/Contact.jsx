@@ -18,12 +18,13 @@ const Contact = () => {
         </svg>
       ),
       title: "Visit Us",
-      details: [
-        "BimBytes Academy",
-        "123 Tech Park, Anna Nagar",
-        "Chennai, Tamil Nadu 600040",
-        "India"
-      ]
+             details: [
+         "BimBytes Academy",
+         "New Military Rd, Vivekananda Nagar",
+         "TNHB Mig V Block, Avadi",
+         "Chennai, Tamil Nadu 600054",
+         "India"
+       ]
     },
     {
       icon: (
@@ -105,167 +106,27 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Contact Form & Map */}
-      <section className="section-padding bg-gradient-to-br from-light to-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Contact Form */}
-            <FadeIn delay={0.2} direction="left">
-              <div>
-                <h2 className="text-3xl font-bold text-textPrimary mb-6">Send us a Message</h2>
-                <form className="space-y-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                      <label className="block text-sm font-medium text-textPrimary mb-2">First Name</label>
-                      <input
-                        type="text"
-                        className="w-full px-4 py-3 border border-border rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300 ease-smooth"
-                        placeholder="Enter your first name"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-sm font-medium text-textPrimary mb-2">Last Name</label>
-                      <input
-                        type="text"
-                        className="w-full px-4 py-3 border border-border rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300 ease-smooth"
-                        placeholder="Enter your last name"
-                      />
-                    </div>
-                  </div>
-                  
-                  <div>
-                    <label className="block text-sm font-medium text-textPrimary mb-2">Email Address</label>
-                    <input
-                      type="email"
-                      className="w-full px-4 py-3 border border-border rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300 ease-smooth"
-                      placeholder="Enter your email address"
-                    />
-                  </div>
-                  
-                  <div>
-                    <label className="block text-sm font-medium text-textPrimary mb-2">Phone Number</label>
-                    <input
-                      type="tel"
-                      className="w-full px-4 py-3 border border-border rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300 ease-smooth"
-                      placeholder="Enter your phone number"
-                    />
-                  </div>
-                  
-                  <div>
-                    <label className="block text-sm font-medium text-textPrimary mb-2">Subject</label>
-                    <select className="w-full px-4 py-3 border border-border rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300 ease-smooth">
-                      <option value="">Select a subject</option>
-                      <option value="course-enquiry">Course Enquiry</option>
-                      <option value="admission">Admission</option>
-                      <option value="placement">Placement</option>
-                      <option value="general">General Information</option>
-                      <option value="other">Other</option>
-                    </select>
-                  </div>
-                  
-                  <div>
-                    <label className="block text-sm font-medium text-textPrimary mb-2">Message</label>
-                    <textarea
-                      rows="5"
-                      className="w-full px-4 py-3 border border-border rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300 ease-smooth resize-none"
-                      placeholder="Tell us how we can help you..."
-                    ></textarea>
-                  </div>
-                  
-                  <button
-                    type="submit"
-                    className="w-full btn-primary py-4 text-lg font-semibold"
-                  >
-                    Send Message
-                  </button>
-                </form>
-              </div>
-            </FadeIn>
-
-            {/* Map */}
-            <FadeIn delay={0.2} direction="right">
-              <div>
-                <h2 className="text-3xl font-bold text-textPrimary mb-6">Find Us</h2>
-                <div className="rounded-2xl overflow-hidden shadow-lg ring-1 ring-border">
-                  <iframe
-                    title="BimBytes Academy Location"
-                    src="https://www.google.com/maps?q=Chennai+Anna+Nagar&output=embed"
-                    width="100%"
-                    height="400"
-                    style={{ border: 0 }}
-                    allowFullScreen=""
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                  />
-                </div>
-                
-                {/* Quick Contact */}
-                <div className="mt-8 p-6 bg-white rounded-2xl shadow-lg ring-1 ring-border">
-                  <h3 className="text-xl font-bold text-textPrimary mb-4">Quick Contact</h3>
-                  <div className="space-y-3">
-                    <div className="flex items-center gap-3">
-                      <span className="text-primary">📞</span>
-                      <span className="text-textSecondary">+91 98765 43210</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <span className="text-primary">📧</span>
-                      <span className="text-textSecondary">info@bimbytesacademy.com</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <span className="text-primary">🕒</span>
-                      <span className="text-textSecondary">Mon - Sat: 9:00 AM - 7:00 PM</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </FadeIn>
-          </div>
-        </div>
-      </section>
-
-      {/* Social Media & CTA */}
+      {/* Map */}
       <section className="section-padding bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeIn delay={0.2} direction="up" fullWidth>
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-textPrimary mb-4">Connect With Us</h2>
-              <p className="text-lg text-textSecondary max-w-2xl mx-auto">
-                Follow us on social media for the latest updates, tips, and industry insights
-              </p>
+          <div className="mb-4">
+            <div>
+              <h2 className="text-2xl font-bold text-textPrimary">Find Us</h2>
+              <p className="text-textSecondary">Bim Bytes Academy — Chennai & Online</p>
             </div>
-          </FadeIn>
-
-          <FadeIn delay={0.3} direction="up" fullWidth>
-            <div className="flex justify-center gap-6 mb-12">
-              {socialLinks.map((social, index) => (
-                <a
-                  key={index}
-                  href={social.url}
-                  className="w-16 h-16 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-2xl flex items-center justify-center text-2xl hover:from-primary/20 hover:to-secondary/20 hover:scale-110 transition-all duration-300 ease-smooth"
-                  title={social.name}
-                >
-                  {social.icon}
-                </a>
-              ))}
-            </div>
-          </FadeIn>
-
-          <FadeIn delay={0.4} direction="up" fullWidth>
-            <div className="text-center">
-              <h3 className="text-2xl font-bold text-textPrimary mb-4">Ready to Start Your BIM Journey?</h3>
-              <p className="text-lg text-textSecondary mb-8 max-w-2xl mx-auto">
-                Get in touch with us today to learn more about our training programs and take the first step towards your BIM career.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button onClick={openLeadModal} className="btn-primary px-8 py-4 text-lg">
-                  Book Free Counselling
-                </button>
-                <button className="btn-secondary px-8 py-4 text-lg">
-                  Download Brochure
-                </button>
-              </div>
-            </div>
-          </FadeIn>
+          </div>
+          <div className="rounded-2xl overflow-hidden shadow ring-1 ring-border">
+            <iframe
+              title="Bim Bytes Academy Location"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3885.7410347221407!2d80.10356067580467!3d13.115585111703712!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52633fd7b23c87%3A0x6e207c138841be94!2sBIM%20BYTES%20ACADEMY!5e0!3m2!1sen!2sin!4v1756291115823!5m2!1sen!2sin"
+              width="100%"
+              height="400"
+              style={{ border: 0 }}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          </div>
         </div>
       </section>
 

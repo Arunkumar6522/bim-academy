@@ -47,9 +47,7 @@ const Navbar = () => {
           <Link to="/contact" className={isActive('/contact') ? 'nav-link-active' : 'nav-link'}>Contact Us</Link>
         </nav>
 
-        <div className="hidden md:flex items-center gap-4">
-          <button onClick={openLeadModal} className="btn-primary">Enroll Now</button>
-        </div>
+
 
         <button
           className="block lg:hidden p-2 rounded-lg bg-primary/20 backdrop-blur-sm hover:bg-primary/30 transition-all duration-300 ease-smooth"
@@ -93,13 +91,18 @@ const Navbar = () => {
               <li><Link to="/blog" className={`${isActive('/blog') ? 'text-primary font-semibold' : 'text-textSecondary hover:text-primary'} transition-colors duration-300 ease-smooth block py-2`} onClick={closeMobileMenu}>Blog</Link></li>
               <li><Link to="/contact" className={`${isActive('/contact') ? 'text-primary font-semibold' : 'text-textSecondary hover:text-primary'} transition-colors duration-300 ease-smooth block py-2`} onClick={closeMobileMenu}>Contact Us</Link></li>
             </ul>
+            {/* Enquire Now - Mobile only */}
+            <div className="mt-8">
+              <button
+                onClick={() => { closeMobileMenu(); openLeadModal(); }}
+                className="w-full px-4 py-3 bg-crimson text-white rounded-xl font-semibold shadow-md hover:bg-crimson/90 transition-colors duration-300"
+              >
+                Enquire Now
+              </button>
+            </div>
           </nav>
 
-          <div className="absolute bottom-6 left-6 right-6">
-            <button className="w-full btn-primary" onClick={() => { closeMobileMenu(); openLeadModal(); }}>
-              Enroll Now
-            </button>
-          </div>
+
         </div>
       </div>
 

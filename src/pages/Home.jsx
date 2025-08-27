@@ -3,6 +3,7 @@ import Hero from "../views/Hero";
 import Footer from "../views/Footer";
 import HomeBlogsGrid from "../views/HomeBlogsGrid";
 import FadeIn from "../components/FadeIn";
+import AchievementsCarousel from "../components/AchievementsCarousel";
 import GoogleReviews from "../components/GoogleReviews";
 
 const Home = () => {
@@ -95,27 +96,38 @@ const Home = () => {
             {[
               {
                 title: "Revit MEP (Mechanical, Electrical & Plumbing)",
-                duration: "3-4 Months",
-                level: "Beginner to Advanced",
-                price: "₹45,000",
-                originalPrice: "₹60,000",
-                description: "Comprehensive training on MEP modeling covering HVAC, electrical, plumbing, and fire-fighting systems."
+                description: "Beginner to Advanced training on MEP modeling. Covers HVAC, electrical, plumbing, and fire-fighting systems. Includes project-based learning with real industry scenarios.",
+                careerPath: "MEP Modeler, BIM MEP Coordinator, BIM MEP Engineer"
               },
               {
                 title: "Revit Architecture",
-                duration: "3-4 Months",
-                level: "Beginner to Advanced",
-                price: "₹40,000",
-                originalPrice: "₹55,000",
-                description: "Master architectural design and BIM workflows with advanced detailing and rendering techniques."
+                description: "Comprehensive training on architectural design and BIM workflows. Learn building design, space planning, family creation, and rendering. Advanced detailing and documentation for construction drawings.",
+                careerPath: "Architectural BIM Modeler, BIM Architect"
               },
               {
                 title: "Revit Structural",
-                duration: "3-4 Months",
-                level: "Beginner to Advanced",
-                price: "₹42,000",
-                originalPrice: "₹58,000",
-                description: "Learn structural modeling, analysis integration, and clash detection for engineering projects."
+                description: "Learn to model structural elements such as beams, columns, foundations, and rebar. Structural analysis integration and clash detection techniques. Focused training for civil and structural engineering workflows.",
+                careerPath: "Structural BIM Modeler, Structural Engineer (BIM)"
+              },
+              {
+                title: "Navisworks Manage",
+                description: "Training on clash detection, coordination, and 4D simulation. Learn to integrate models from multiple disciplines for seamless collaboration. Master project review, visualization, and BIM coordination workflows.",
+                careerPath: "BIM Coordinator, BIM Manager"
+              },
+              {
+                title: "MEP Modeler Course",
+                description: "Combination of Revit MEP and basic Navisworks Manage. Hands-on training on mechanical, electrical, and plumbing modeling. Includes coordination fundamentals.",
+                careerPath: "MEP Modeler, BIM MEP Coordinator"
+              },
+              {
+                title: "MEP BIM Coordinator Course",
+                description: "Advanced MEP modeling with Navisworks coordination. Clash detection, model management, and communication with stakeholders. Practical exposure to BIM execution plans and standards.",
+                careerPath: "MEP BIM Coordinator, BIM MEP Manager"
+              },
+              {
+                title: "BIM Manager Course",
+                description: "Complete BIM lifecycle management training. Covers multi-discipline coordination, team leadership, and project delivery standards. Includes exposure to BIM360, documentation control, and QA/QC workflows.",
+                careerPath: "BIM Manager, BIM Director"
               }
             ].map((course, index) => (
               <FadeIn key={index} delay={0.2 + index * 0.1} direction="up">
@@ -125,26 +137,16 @@ const Home = () => {
                       {course.title}
                     </h3>
                     
-                    <div className="grid grid-cols-2 gap-3 mb-4">
-                      <div className="text-center p-2 bg-primary/5 rounded-lg">
-                        <div className="text-xs text-textSecondary mb-1">Duration</div>
-                        <div className="font-semibold text-textPrimary text-sm">{course.duration}</div>
-                      </div>
-                      <div className="text-center p-2 bg-secondary/5 rounded-lg">
-                        <div className="text-xs text-textSecondary mb-1">Level</div>
-                        <div className="font-semibold text-textPrimary text-sm">{course.level}</div>
-                      </div>
-                    </div>
-                    
                     <p className="text-textSecondary text-sm mb-4 leading-relaxed">
                       {course.description}
                     </p>
                     
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-2">
-                        <span className="text-xl font-bold text-primary">{course.price}</span>
-                        <span className="text-sm text-textSecondary line-through">{course.originalPrice}</span>
-                      </div>
+                    <div className="bg-primary/5 p-3 rounded-lg mb-4">
+                      <span className="text-xs text-primary uppercase tracking-wide font-semibold">Career Path: </span>
+                      <span className="text-sm text-textPrimary">{course.careerPath}</span>
+                    </div>
+                    
+                    <div className="flex justify-center">
                       <button className="btn-primary px-4 py-2 text-sm">
                         Learn More
                       </button>
@@ -165,7 +167,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Achievements Section */}
+      {/* Achievements Section - Carousel */}
       <section className="section-padding bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn delay={0.2} direction="down" fullWidth>
@@ -179,26 +181,8 @@ const Home = () => {
             </div>
           </FadeIn>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              { number: "14+", label: "Years Experience", icon: "🎯" },
-              { number: "5000+", label: "Students Trained", icon: "👥" },
-              { number: "200+", label: "Companies Partnered", icon: "🤝" },
-              { number: "95%", label: "Placement Rate", icon: "📈" }
-            ].map((achievement, index) => (
-              <FadeIn key={index} delay={0.2 + index * 0.1} direction="up">
-                <div className="card p-8 text-center hover:shadow-glow transition-all duration-500 ease-smooth">
-                  <div className="mb-6">
-                    <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-2xl mb-4">
-                      <span className="text-3xl">{achievement.icon}</span>
-                    </div>
-                    <div className="text-4xl font-bold text-primary mb-2">{achievement.number}</div>
-                    <div className="text-textPrimary font-semibold">{achievement.label}</div>
-                  </div>
-                </div>
-              </FadeIn>
-            ))}
-          </div>
+          {/* Image + text cards carousel */}
+          <AchievementsCarousel />
         </div>
       </section>
 
@@ -221,17 +205,16 @@ const Home = () => {
       {/* Location Map */}
       <section className="section-padding bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-4">
+          <div className="mb-4">
             <div>
               <h2 className="text-2xl font-bold text-textPrimary">Find Us</h2>
               <p className="text-textSecondary">Bim Bytes Academy — Chennai & Online</p>
             </div>
-            <a href="/brochure.pdf" download className="btn-primary px-6 py-3">Download Brochure</a>
           </div>
           <div className="rounded-2xl overflow-hidden shadow ring-1 ring-border">
             <iframe
               title="Bim Bytes Academy Location"
-              src="https://www.google.com/maps?q=Chennai&output=embed"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3885.7410347221407!2d80.10356067580467!3d13.115585111703712!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52633fd7b23c87%3A0x6e207c138841be94!2sBIM%20BYTES%20ACADEMY!5e0!3m2!1sen!2sin!4v1756291115823!5m2!1sen!2sin"
               width="100%"
               height="400"
               style={{ border: 0 }}

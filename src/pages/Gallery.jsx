@@ -202,49 +202,7 @@ const Gallery = () => {
         </div>
       </section>
 
-      {/* Statistics Section */}
-      <section className="section-padding bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeIn delay={0.2} direction="up" fullWidth>
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
-              <div className="p-6 rounded-2xl bg-gradient-to-br from-primary/10 to-secondary/10">
-                <div className="text-4xl font-bold text-primary mb-2">500+</div>
-                <div className="text-textPrimary font-semibold">Projects Completed</div>
-              </div>
-              <div className="p-6 rounded-2xl bg-gradient-to-br from-secondary/10 to-accent/10">
-                <div className="text-4xl font-bold text-secondary mb-2">1000+</div>
-                <div className="text-textPrimary font-semibold">Students Trained</div>
-              </div>
-              <div className="p-6 rounded-2xl bg-gradient-to-br from-accent/10 to-primary/10">
-                <div className="text-4xl font-bold text-accent mb-2">50+</div>
-                <div className="text-textPrimary font-semibold">Industry Partners</div>
-              </div>
-              <div className="p-6 rounded-2xl bg-gradient-to-br from-success/10 to-primary/10">
-                <div className="text-4xl font-bold text-success mb-2">95%</div>
-                <div className="text-textPrimary font-semibold">Success Rate</div>
-              </div>
-            </div>
-          </FadeIn>
-        </div>
-      </section>
 
-      {/* CTA Section */}
-      <section className="section-padding bg-gradient-to-br from-primary to-secondary">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <FadeIn delay={0.2} direction="up" fullWidth>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
-              Ready to Join Our Academy?
-            </h2>
-            <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto">
-              Start your BIM journey and create projects that will be featured in our gallery
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="btn-secondary px-8 py-4 text-lg">View Courses</button>
-              <button className="btn-white px-8 py-4 text-lg">Contact Us</button>
-            </div>
-          </FadeIn>
-        </div>
-      </section>
 
       <Footer />
     </>

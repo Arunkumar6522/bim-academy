@@ -100,10 +100,7 @@ const Products = () => {
                         <img src={starsIcon} alt="Rating" className="h-4 sm:h-5 w-auto" />
                       </div>
                       
-                      <div className="flex items-center justify-between">
-                        <span className="text-lg sm:text-2xl font-bold text-primary">
-                          {product.price}
-                        </span>
+                      <div className="flex justify-center">
                         <button 
                           className="p-2 sm:p-3 bg-primary hover:bg-primary/90 text-white rounded-full shadow-lg hover:shadow-glow transform hover:scale-110 active:scale-95 transition-all duration-300 ease-smooth"
                           onClick={(e) => {

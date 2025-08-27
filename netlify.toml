@@ -1,0 +1,20 @@
+[build]
+  command = "npm run build"
+  publish = "build"
+  functions = "netlify/functions"
+
+[[redirects]]
+  from = "/google-reviews"
+  to = "/.netlify/functions/google-reviews"
+  status = 200
+
+[[redirects]]
+  from = "/google-photo"
+  to = "/.netlify/functions/google-photo"
+  status = 200
+
+# SPA fallback
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

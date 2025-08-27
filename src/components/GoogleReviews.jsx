@@ -22,8 +22,8 @@ const GoogleReviews = () => {
           return;
         }
         const url = hasPlaceId
-          ? `/google-reviews?placeId=${encodeURIComponent(config.GOOGLE_PLACE_ID)}`
-          : `/google-reviews?query=${encodeURIComponent(config.GOOGLE_PLACE_QUERY)}`;
+          ? `${process.env.NODE_ENV === 'production' ? '' : ''}/google-reviews?placeId=${encodeURIComponent(config.GOOGLE_PLACE_ID)}`
+          : `${process.env.NODE_ENV === 'production' ? '' : ''}/google-reviews?query=${encodeURIComponent(config.GOOGLE_PLACE_QUERY)}`;
         const resp = await fetch(url);
         const json = await resp.json();
         if (!json.success) {

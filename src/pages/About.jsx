@@ -13,28 +13,7 @@ const About = () => {
     { year: "2024", title: "Innovation Hub", description: "Became leading BIM training institute" }
   ];
 
-  const values = [
-    {
-      title: "Excellence",
-      description: "We strive for excellence in every aspect of our training and services",
-      icon: "⭐"
-    },
-    {
-      title: "Innovation",
-      description: "Constantly evolving our curriculum to match industry standards",
-      icon: "🚀"
-    },
-    {
-      title: "Integrity",
-      description: "Building trust through honest and transparent relationships",
-      icon: "🤝"
-    },
-    {
-      title: "Student Success",
-      description: "Your success is our primary goal and measure of achievement",
-      icon: "🎯"
-    }
-  ];
+
 
   return (
     <>

@@ -6,7 +6,6 @@ import LeadCaptureModal from "../components/LeadCaptureModal";
 const Contact = () => {
   const [showLeadModal, setShowLeadModal] = useState(false);
 
-  const openLeadModal = () => setShowLeadModal(true);
   const closeLeadModal = () => setShowLeadModal(false);
 
   const contactInfo = [
@@ -54,13 +53,7 @@ const Contact = () => {
     }
   ];
 
-  const socialLinks = [
-    { name: "Facebook", icon: "📘", url: "#" },
-    { name: "LinkedIn", icon: "💼", url: "#" },
-    { name: "Instagram", icon: "📷", url: "#" },
-    { name: "YouTube", icon: "📺", url: "#" },
-    { name: "WhatsApp", icon: "💬", url: "#" }
-  ];
+
 
   return (
     <>

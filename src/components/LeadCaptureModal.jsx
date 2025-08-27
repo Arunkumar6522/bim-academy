@@ -39,7 +39,7 @@ const LeadCaptureModal = ({ isOpen, onClose }) => {
       const result = await response.json();
       console.log('📊 Response data:', result);
       
-      if (result.success) {
+      if (result.status === 'success') {
         alert('Thank you for your interest! We will contact you within 24 hours.');
         onClose();
         setFormData({ name: '', email: '', phone: '', course: '', experience: '', message: '' });

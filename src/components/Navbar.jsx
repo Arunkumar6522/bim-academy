@@ -33,16 +33,18 @@ const Navbar = () => {
       <div className="relative w-full max-w-7xl flex items-center justify-between py-4 md:py-6 mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center">
           <Link to="/">
-            <img src={logo} alt="BimBytes Academy Logo" className="h-16 md:h-20 lg:h-24 w-auto" />
+            <img src={logo} alt="BimBytes Academy Logo" className="h-24 md:h-28 lg:h-32 w-auto" />
           </Link>
         </div>
 
         <nav className="hidden lg:flex items-center space-x-8">
           <Link to="/" className={isActive('/') ? 'nav-link-active' : 'nav-link'}>Home</Link>
+          <Link to="/about" className={isActive('/about') ? 'nav-link-active' : 'nav-link'}>About Us</Link>
           <Link to="/courses" className={isActive('/courses') ? 'nav-link-active' : 'nav-link'}>Courses</Link>
-          <Link to="/about" className={isActive('/about') ? 'nav-link-active' : 'nav-link'}>About</Link>
-          <Link to="/careers" className={isActive('/careers') ? 'nav-link-active' : 'nav-link'}>Careers</Link>
+          <Link to="/placement" className={isActive('/placement') ? 'nav-link-active' : 'nav-link'}>Placement & Internships</Link>
+          <Link to="/gallery" className={isActive('/gallery') ? 'nav-link-active' : 'nav-link'}>Gallery</Link>
           <Link to="/blog" className={isActive('/blog') ? 'nav-link-active' : 'nav-link'}>Blog</Link>
+          <Link to="/contact" className={isActive('/contact') ? 'nav-link-active' : 'nav-link'}>Contact Us</Link>
         </nav>
 
         <div className="hidden md:flex items-center gap-4">
@@ -84,10 +86,12 @@ const Navbar = () => {
           <nav className="p-6">
             <ul className="space-y-4">
               <li><Link to="/" className={`${isActive('/') ? 'text-primary font-semibold' : 'text-textSecondary hover:text-primary'} transition-colors duration-300 ease-smooth block py-2`} onClick={closeMobileMenu}>Home</Link></li>
+              <li><Link to="/about" className={`${isActive('/about') ? 'text-primary font-semibold' : 'text-textSecondary hover:text-primary'} transition-colors duration-300 ease-smooth block py-2`} onClick={closeMobileMenu}>About Us</Link></li>
               <li><Link to="/courses" className={`${isActive('/courses') ? 'text-primary font-semibold' : 'text-textSecondary hover:text-primary'} transition-colors duration-300 ease-smooth block py-2`} onClick={closeMobileMenu}>Courses</Link></li>
-              <li><Link to="/about" className={`${isActive('/about') ? 'text-primary font-semibold' : 'text-textSecondary hover:text-primary'} transition-colors duration-300 ease-smooth block py-2`} onClick={closeMobileMenu}>About</Link></li>
-              <li><Link to="/careers" className={`${isActive('/careers') ? 'text-primary font-semibold' : 'text-textSecondary hover:text-primary'} transition-colors duration-300 ease-smooth block py-2`} onClick={closeMobileMenu}>Careers</Link></li>
+              <li><Link to="/placement" className={`${isActive('/placement') ? 'text-primary font-semibold' : 'text-textSecondary hover:text-primary'} transition-colors duration-300 ease-smooth block py-2`} onClick={closeMobileMenu}>Placement & Internships</Link></li>
+              <li><Link to="/gallery" className={`${isActive('/gallery') ? 'text-primary font-semibold' : 'text-textSecondary hover:text-primary'} transition-colors duration-300 ease-smooth block py-2`} onClick={closeMobileMenu}>Gallery</Link></li>
               <li><Link to="/blog" className={`${isActive('/blog') ? 'text-primary font-semibold' : 'text-textSecondary hover:text-primary'} transition-colors duration-300 ease-smooth block py-2`} onClick={closeMobileMenu}>Blog</Link></li>
+              <li><Link to="/contact" className={`${isActive('/contact') ? 'text-primary font-semibold' : 'text-textSecondary hover:text-primary'} transition-colors duration-300 ease-smooth block py-2`} onClick={closeMobileMenu}>Contact Us</Link></li>
             </ul>
           </nav>
 

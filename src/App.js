@@ -4,11 +4,12 @@ import Navbar from "./components/Navbar";
 
 // Pages
 import Home from "./pages/Home";
-import Courses from "./pages/Courses";
 import About from "./pages/About";
-import Careers from "./pages/Careers";
+import Courses from "./pages/Courses";
+import Placement from "./pages/Placement";
+import Gallery from "./pages/Gallery";
 import Blog from "./pages/Blog";
-import BlogPost from "./pages/BlogPost";
+import Contact from "./pages/Contact";
 
 function App() {
   return (
@@ -17,11 +18,12 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/courses" element={<Courses />} />
           <Route path="/about" element={<About />} />
-          <Route path="/careers" element={<Careers />} />
+          <Route path="/courses" element={<Courses />} />
+          <Route path="/placement" element={<Placement />} />
+          <Route path="/gallery" element={<Gallery />} />
           <Route path="/blog" element={<Blog />} />
-          <Route path="/blog/:postId" element={<BlogPost />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
       </div>
     </Router>

@@ -32,7 +32,7 @@ const BlogPost = () => {
     const load = async () => {
       try {
         setLoading(true);
-        const data = await fetchJsonp('https://artstarofficial.blogspot.com/feeds/posts/default');
+        const data = await fetchJsonp('https://bimbytesacademy.blogspot.com/feeds/posts/default');
         const list = (data?.feed?.entry || []).map((e) => ({
           entryId: e?.id?.$t || '',
           title: e?.title?.$t || 'Untitled',

@@ -19,7 +19,7 @@ const HomeBlogsGrid = () => {
     const load = async () => {
       try {
         setLoading(true);
-        const data = await fetchJsonp('https://artstarofficial.blogspot.com/feeds/posts/default');
+        const data = await fetchJsonp('https://bimbytesacademy.blogspot.com/feeds/posts/default');
         const entries = data?.feed?.entry || [];
         const parsed = entries.slice(0, 6).map((e) => {
           const entryId = e?.id?.$t || '';

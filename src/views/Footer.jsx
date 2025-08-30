@@ -1,7 +1,5 @@
 // local imports
 import {
-  footerLinksColumnOne,
-  footerLinksColumnTwo,
   newsletter,
 } from "../data";
 import { config } from "../config";

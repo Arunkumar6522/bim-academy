@@ -1,16 +1,7 @@
 // Configuration file for the application
 export const config = {
-  // API URL - Smart detection for both local and production
-  GOOGLE_SHEETS_API_URL: (() => {
-    // Check if we're running on localhost (development)
-    if (typeof window !== 'undefined' && 
-        (window.location.hostname === 'localhost' || 
-         window.location.hostname === '127.0.0.1')) {
-      return 'http://localhost:3000/api'; // Use local proxy
-    }
-    // Production (Netlify, GitHub Pages, etc.)
-    return 'https://script.google.com/macros/s/AKfycbyp758cB6_U_t0qCD3rrf1c8yWz9lfAT9l0M55ajzNhcNUyj54QXq4yYZl29W7tZjIp/exec';
-  })(),
+  // Google Apps Script API URL for enquiries and placements
+  GOOGLE_APPS_SCRIPT_URL: 'https://script.google.com/macros/s/AKfycbw-eWZoVNeZ64Xg8vd96dxEQNA4l-v7oWMeVcUag7oUhXhwDLw0ObIOy5H1MYDCnMY4Gg/exec',
   
   // Google Reviews (Places API via local proxy)
   GOOGLE_REVIEWS_API_BASE: (() => {

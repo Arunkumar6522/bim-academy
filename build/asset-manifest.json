@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/static/css/main.889104ff.css",
+    "main.js": "/static/js/main.c2ef79f2.js",
+    "static/media/stock.mp4": "/static/media/stock.52cca4f212d088269206.mp4",
+    "static/media/WhatsApp Image 2025-08-25 at 21.14.04.jpeg": "/static/media/WhatsApp Image 2025-08-25 at 21.14.04.79839934d2eba485b9c7.jpeg",
+    "static/media/WhatsApp Image 2025-08-25 at 21.14.26.jpeg": "/static/media/WhatsApp Image 2025-08-25 at 21.14.26.28c3cc6cca1836f23910.jpeg",
+    "static/media/WhatsApp Image 2025-08-25 at 21.14.04 (4).jpeg": "/static/media/WhatsApp Image 2025-08-25 at 21.14.04 (4).237444c98d5c272693cb.jpeg",
+    "static/media/WhatsApp Image 2025-08-25 at 21.14.26 (1).jpeg": "/static/media/WhatsApp Image 2025-08-25 at 21.14.26 (1).b1482851d575292d398b.jpeg",
+    "static/media/WhatsApp Image 2025-08-25 at 21.14.04 (5).jpeg": "/static/media/WhatsApp Image 2025-08-25 at 21.14.04 (5).868901ddc2876d110281.jpeg",
+    "static/media/WhatsApp Image 2025-08-25 at 21.14.04 (1).jpeg": "/static/media/WhatsApp Image 2025-08-25 at 21.14.04 (1).a343477e0245a9bde0a4.jpeg",
+    "static/media/WhatsApp Image 2025-08-25 at 21.14.04 (3).jpeg": "/static/media/WhatsApp Image 2025-08-25 at 21.14.04 (3).b516f91f98f49690a49d.jpeg",
+    "static/media/sun-icon.svg": "/static/media/sun-icon.8b253686c39fbffd17f909a4988b30e0.svg",
+    "static/media/new logo.svg": "/static/media/new logo.9ba6cf79ece3aadfcdc61b98077c6beb.svg",
+    "static/media/plant-icon.svg": "/static/media/plant-icon.4ff21eeb5cb7160a085053620e195e70.svg",
+    "index.html": "/index.html",
+    "static/media/free-shiping-icon.svg": "/static/media/free-shiping-icon.613156b44e46bef9d78642d3190611f6.svg",
+    "static/media/temperature-icon.svg": "/static/media/temperature-icon.269d1bd0e6c38038960f5485e7a7e349.svg",
+    "static/media/quick-payment-icon.svg": "/static/media/quick-payment-icon.61855b619a93598f94bdcfe3846b7f62.svg",
+    "static/media/water-icon.svg": "/static/media/water-icon.b435400ed14af12331e17351f383cf61.svg",
+    "static/media/support-icon.svg": "/static/media/support-icon.74552ad7f2dfa330069d29d3e5fba3ac.svg",
+    "main.889104ff.css.map": "/static/css/main.889104ff.css.map",
+    "main.c2ef79f2.js.map": "/static/js/main.c2ef79f2.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.889104ff.css",
+    "static/js/main.c2ef79f2.js"
+  ]
+}

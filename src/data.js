@@ -111,15 +111,11 @@ export const footerLinksColumnOne = [
 
 export const footerLinksColumnTwo = [
   {
-    title: "Support",
-    links: ["Student Portal", "Technical Support", "Career Counseling", "Placement Assistance"],
-  },
-  {
     title: "Contact Info",
     links: [
-      "BimBytes Academy, India",
+      "BimBytes Academy, Avadi",
       "info@bimbytesacademy.com",
-      "+91 98765 43210",
+      "+91 88077 40059",
     ],
   },
 ];

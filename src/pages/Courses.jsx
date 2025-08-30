@@ -87,8 +87,8 @@ const Courses = () => {
   return (
     <>
       {/* Hero Section */}
-      <section className="section-padding bg-gradient-to-br from-primary/5 via-secondary/10 to-accent/5">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <section className="py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn delay={0.2} direction="down" fullWidth>
             <div className="text-center mb-12">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-textPrimary mb-6">
@@ -104,7 +104,7 @@ const Courses = () => {
       </section>
 
       {/* Course Categories Filter */}
-      <section className="section-padding bg-white">
+      <section className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn delay={0.3} direction="up" fullWidth>
             <div className="flex flex-wrap justify-center gap-4 mb-12">
@@ -127,7 +127,7 @@ const Courses = () => {
       </section>
 
       {/* Courses Grid */}
-      <section className="section-padding bg-gradient-to-br from-light to-white">
+      <section className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredCourses.map((course, index) => (
@@ -184,7 +184,7 @@ const Courses = () => {
 
 
       {/* CTA Section */}
-      <section className="section-padding bg-crimson">
+      <section className="bg-crimson py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <FadeIn delay={0.2} direction="up" fullWidth>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4">

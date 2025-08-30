@@ -19,33 +19,34 @@ const LeadCaptureModal = ({ isOpen, onClose }) => {
     setIsSubmitting(true);
     
     console.log('🚀 Form submission started');
-    console.log('📡 API URL:', config.GOOGLE_SHEETS_API_URL);
+    console.log('📡 API URL:', config.GOOGLE_APPS_SCRIPT_URL);
     console.log('📝 Form data:', formData);
     
     try {
       // Send data to Google Sheets via Apps Script
-      const response = await fetch(config.GOOGLE_SHEETS_API_URL, {
+      const response = await fetch(config.GOOGLE_APPS_SCRIPT_URL, {
         method: 'POST',
+        mode: 'no-cors', // Google Apps Script doesn't support CORS
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          ...formData,
-          source: 'Lead Capture Modal'
+          action: 'enquiry',
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          course: formData.course,
+          message: formData.message
         })
       });
       
+      // Since no-cors mode is used, we can't read the response
+      // We'll assume success if no error is thrown
       console.log('📨 Response received:', response);
-      const result = await response.json();
-      console.log('📊 Response data:', result);
       
-      if (result.status === 'success') {
-        alert('Thank you for your interest! We will contact you within 24 hours.');
-        onClose();
-        setFormData({ name: '', email: '', phone: '', course: '', experience: '', message: '' });
-      } else {
-        alert('There was an error. Please try again.');
-      }
+      alert('Thank you for your interest! We will contact you within 24 hours.');
+      onClose();
+      setFormData({ name: '', email: '', phone: '', course: '', experience: '', message: '' });
     } catch (error) {
       console.error('Submission error:', error);
       alert('There was an error. Please try again.');

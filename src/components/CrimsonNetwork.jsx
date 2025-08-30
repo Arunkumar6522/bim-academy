@@ -137,7 +137,7 @@ const CrimsonNetwork = () => {
     <canvas
       ref={canvasRef}
       className="absolute inset-0 w-full h-full"
-      style={{ zIndex: 0, pointerEvents: 'none' }}
+      style={{ zIndex: 0, pointerEvents: 'none', opacity: 0.5 }}
     />
   );
 };

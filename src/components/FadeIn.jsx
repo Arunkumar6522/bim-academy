@@ -80,13 +80,13 @@ const FadeIn = memo(({
       ref={ref}
       className={`${fullWidth ? "w-full" : "w-auto"} ${
         padding ? "px-4 sm:px-6 lg:px-8" : "px-0"
-      } flex items-center justify-center ${className}`}
+      } ${className}`}
     >
       <motion.div
         variants={getVariants()}
         initial="hidden"
         animate={controls}
-        className="w-full flex items-center justify-center"
+        className="w-full"
       >
         {children}
       </motion.div>

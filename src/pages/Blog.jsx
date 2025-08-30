@@ -105,10 +105,10 @@ const Blog = () => {
   return (
     <>
       {/* Hero Section */}
-      <section className="section-padding bg-gradient-to-br from-primary/5 via-secondary/10 to-accent/5">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <section className="py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn delay={0.2} direction="down" fullWidth>
-            <div className="text-center mb-0">
+            <div className="text-center mb-12">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-textPrimary">
                 Our <span className="text-gradient">Blog</span>
               </h1>
@@ -118,7 +118,7 @@ const Blog = () => {
       </section>
 
       {/* Blog Posts Grid */}
-      <section className="section-padding bg-white">
+      <section className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           

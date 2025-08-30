@@ -4,8 +4,68 @@ import {
   footerLinksColumnTwo,
   newsletter,
 } from "../data";
+import { config } from "../config";
+import { useState } from "react";
 
 const Footer = () => {
+  const [email, setEmail] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
+  const [popupMessage, setPopupMessage] = useState('');
+  const [popupType, setPopupType] = useState('success');
+
+  // Email validation function
+  const validateEmail = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
+  const handleSubscribe = async (e) => {
+    e.preventDefault();
+    
+    // Validate email first
+    if (!validateEmail(email)) {
+      setPopupMessage('Please enter a valid email address');
+      setPopupType('error');
+      setShowPopup(true);
+      return;
+    }
+
+    setLoading(true);
+
+    try {
+      await fetch(config.GOOGLE_APPS_SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors', // Google Apps Script doesn't support CORS
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          action: 'subscribe',
+          email: email
+        })
+      });
+
+      // Since no-cors mode is used, we can't read the response
+      // We'll assume success if no error is thrown
+      setPopupMessage('Thank you! You\'ve been successfully subscribed to our course updates.');
+      setPopupType('success');
+      setShowPopup(true);
+      setEmail('');
+    } catch (error) {
+      console.error('Error subscribing email:', error);
+      setPopupMessage('Sorry, there was an error. Please try again.');
+      setPopupType('error');
+      setShowPopup(true);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const closePopup = () => {
+    setShowPopup(false);
+  };
+
   return (
     <footer className="relative bg-gradient-to-br from-dark via-secondary to-dark text-white overflow-hidden">
       {/* Background Pattern */}
@@ -31,91 +91,100 @@ const Footer = () => {
               Stay updated with our latest BIM training programs, industry insights, and career opportunities.
             </p>
             
-            <div className="space-y-4">
+            <form onSubmit={handleSubscribe} className="space-y-4">
               <div className="relative group">
                 <input
                   type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your email address"
                   className="w-full px-6 py-4 bg-white/10 border border-white/20 text-white placeholder-gray-400 
                            rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent 
                            transition-all duration-300 ease-smooth backdrop-blur-sm
                            group-hover:bg-white/15 group-hover:border-white/30"
+                  required
                 />
-                <button className="absolute right-2 top-1/2 -translate-y-1/2 px-6 py-2.5 
-                                 bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90
-                                 text-white font-semibold rounded-lg transition-all duration-300 ease-smooth
-                                 transform hover:scale-105 shadow-lg hover:shadow-glow">
-                  Subscribe
+                <button 
+                  type="submit"
+                  disabled={loading}
+                  className="absolute right-2 top-1/2 -translate-y-1/2 px-6 py-2.5 
+                           bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90
+                           text-white font-semibold rounded-lg transition-all duration-300 ease-smooth
+                           transform hover:scale-105 shadow-lg hover:shadow-glow disabled:opacity-50 disabled:cursor-not-allowed">
+                  {loading ? 'Subscribing...' : 'Subscribe'}
                 </button>
               </div>
               <p className="text-xs text-gray-400">
                 We respect your privacy. Unsubscribe at any time.
               </p>
-            </div>
+            </form>
           </div>
 
-          {/* Links Section */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            {/* Column One */}
-            <div className="space-y-8">
-              {footerLinksColumnOne.map((item, index) => (
-                <div key={index} className="space-y-4">
-                  <h3 className="text-lg font-semibold text-white relative">
-                    {item.title}
-                    <div className="absolute -bottom-2 left-0 w-8 h-0.5 bg-gradient-to-r from-primary to-accent rounded-full"></div>
-                  </h3>
-                  <ul className="space-y-3">
-                    {item.links.map((link, i) => (
-                      <li key={i}>
-                        <button 
-                          type="button"
-                          className="text-gray-300 hover:text-primary transition-all duration-300 ease-smooth text-sm
-                                   relative group text-left w-full"
-                        >
-                          <span className="relative">
-                            {link}
-                            <span className="absolute -bottom-0.5 left-0 w-0 h-0.5 bg-primary transition-all duration-300 ease-smooth group-hover:w-full"></span>
-                          </span>
-                        </button>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
+          {/* Links Section - All Three in One Line */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Training Programs */}
+            <div className="space-y-4">
+              <h3 className="text-lg font-semibold text-white relative">
+                Training Programs
+                <div className="absolute -bottom-2 left-0 w-8 h-0.5 bg-gradient-to-r from-primary to-accent rounded-full"></div>
+              </h3>
+              <ul className="space-y-2">
+                {["Revit MEP", "Revit Architecture", "Revit Structural", "Navisworks", "BIM Manager"].map((link, i) => (
+                  <li key={i}>
+                    <button 
+                      type="button"
+                      className="text-gray-300 hover:text-primary transition-all duration-300 ease-smooth text-sm
+                               relative group text-left w-full"
+                    >
+                      <span className="relative">
+                        {link}
+                        <span className="absolute -bottom-0.5 left-0 w-0 h-0.5 bg-primary transition-all duration-300 ease-smooth group-hover:w-full"></span>
+                      </span>
+                    </button>
+                  </li>
+                ))}
+              </ul>
             </div>
 
-            {/* Column Two */}
-            <div className="space-y-8">
-              {footerLinksColumnTwo.map((item, index) => (
-                <div key={index} className="space-y-4">
-                  <h3 className="text-lg font-semibold text-white relative">
-                    {item.title}
-                    <div className="absolute -bottom-2 left-0 w-8 h-0.5 bg-gradient-to-r from-primary to-accent rounded-full"></div>
-                  </h3>
-                  <ul className="space-y-3">
-                    {item.links.map((link, i) => (
-                      <li key={i}>
-                        {index !== 1 ? (
-                          <button 
-                            type="button"
-                            className="text-gray-300 hover:text-primary transition-all duration-300 ease-smooth text-sm
-                                     relative group text-left w-full"
-                          >
-                            <span className="relative">
-                              {link}
-                              <span className="absolute -bottom-0.5 left-0 w-0 h-0.5 bg-primary transition-all duration-300 ease-smooth group-hover:w-full"></span>
-                            </span>
-                          </button>
-                        ) : (
-                          <span className="text-gray-300 text-sm">
-                            {link}
-                          </span>
-                        )}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
+            {/* Company */}
+            <div className="space-y-4">
+              <h3 className="text-lg font-semibold text-white relative">
+                Company
+                <div className="absolute -bottom-2 left-0 w-8 h-0.5 bg-gradient-to-r from-primary to-accent rounded-full"></div>
+              </h3>
+              <ul className="space-y-2">
+                {["About Us", "Careers", "Blog", "Contact"].map((link, i) => (
+                  <li key={i}>
+                    <button 
+                      type="button"
+                      className="text-gray-300 hover:text-primary transition-all duration-300 ease-smooth text-sm
+                               relative group text-left w-full"
+                    >
+                      <span className="relative">
+                        {link}
+                        <span className="absolute -bottom-0.5 left-0 w-0 h-0.5 bg-primary transition-all duration-300 ease-smooth group-hover:w-full"></span>
+                      </span>
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Contact Info */}
+            <div className="space-y-4">
+              <h3 className="text-lg font-semibold text-white relative">
+                Contact Info
+                <div className="absolute -bottom-2 left-0 w-8 h-0.5 bg-gradient-to-r from-primary to-accent rounded-full"></div>
+              </h3>
+              <ul className="space-y-2">
+                {["BimBytes Academy, Avadi", "info@bimbytesacademy.com", "+91 88077 40059"].map((link, i) => (
+                  <li key={i}>
+                    <span className="text-gray-300 text-sm">
+                      {link}
+                    </span>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>
@@ -147,27 +216,71 @@ const Footer = () => {
                 <path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8h4V24h-4V8zm7.5 0h3.8v2.2h.1c.5-.9 1.7-2.2 3.6-2.2 3.8 0 4.5 2.5 4.5 5.8V24h-4v-7.1c0-1.7 0-3.8-2.3-3.8-2.3 0-2.7 1.8-2.7 3.6V24h-4V8z"/>
               </svg>
             </a>
-            <a href="https://wa.me/919876543210" aria-label="WhatsApp" className="group text-gray-400 hover:text-white transition">
+            <a href="https://wa.me/918807740059" aria-label="WhatsApp" className="group text-gray-400 hover:text-white transition">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
                 <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
               </svg>
             </a>
-            <a href="https://youtube.com" aria-label="YouTube" className="group text-gray-400 hover:text-white transition">
+            <a href="https://www.youtube.com/@BimBytesAcademy" aria-label="YouTube" className="group text-gray-400 hover:text-white transition">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
                 <path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.6 3.5 12 3.5 12 3.5s-7.6 0-9.4.6A3 3 0 00.5 6.2 31.2 31.2 0 000 12a31.2 31.2 0 00.5 5.8 3 3 0 002.1 2.1c1.8.6 9.4.6 9.4.6s7.6 0 9.4-.6a3 3 0 002.1-2.1A31.2 31.2 0 0024 12a31.2 31.2 0 00-.5-5.8zM9.8 15.5v-7l6.3 3.5-6.3 3.5z"/>
               </svg>
             </a>
-            <a href="https://instagram.com" aria-label="Instagram" className="group text-gray-400 hover:text-white transition">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
-                <path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm10 2c1.7 0 3 1.3 3 3v10c0 1.7-1.3 3-3 3H7c-1.7 0-3-1.3-3-3V7c0-1.7 1.3-3 3-3h10zm-5 3a5 5 0 100 10 5 5 0 000-10zm0 2.2a2.8 2.8 0 110 5.6 2.8 2.8 0 010-5.6zM17.8 6.2a1 1 0 100 2 1 1 0 000-2z"/>
-              </svg>
-            </a>
+
           </div>
         </div>
       </div>
 
       {/* Bottom Accent */}
       <div className="h-1 bg-gradient-to-r from-primary via-accent to-secondary"></div>
+
+      {/* Popup Notification */}
+      {showPopup && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+          <div className={`bg-white rounded-2xl p-6 max-w-md w-full shadow-2xl transform transition-all duration-300 ${
+            showPopup ? 'scale-100 opacity-100' : 'scale-95 opacity-0'
+          }`}>
+            <div className="text-center">
+              <div className={`w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center ${
+                popupType === 'success' ? 'bg-green-100' : 'bg-red-100'
+              }`}>
+                {popupType === 'success' ? (
+                  <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                ) : (
+                  <svg className="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                )}
+              </div>
+              
+              <h3 className={`text-lg font-semibold mb-2 ${
+                popupType === 'success' ? 'text-green-800' : 'text-red-800'
+              }`}>
+                {popupType === 'success' ? 'Success!' : 'Error'}
+              </h3>
+              
+              <p className={`text-sm mb-6 ${
+                popupType === 'success' ? 'text-green-600' : 'text-red-600'
+              }`}>
+                {popupMessage}
+              </p>
+              
+              <button
+                onClick={closePopup}
+                className={`px-6 py-2 rounded-xl font-medium transition-colors ${
+                  popupType === 'success' 
+                    ? 'bg-green-600 text-white hover:bg-green-700' 
+                    : 'bg-red-600 text-white hover:bg-red-700'
+                }`}
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </footer>
   );
 };
